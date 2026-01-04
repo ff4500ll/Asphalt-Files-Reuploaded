@@ -1,0 +1,12 @@
+# YOLO Dataset Configuration
+# Generated from: Tryhard Rod, Tryhard Rod 2, Tryhard Rod 3
+
+path: c:\Users\8USB\Desktop\Clutter\Autohotkey\IRUS Neural\YOLODataset
+train: images/train
+val: images/train  # Using same as train for now
+
+names:
+  0: Icon
+  1: Bar
+
+nc: 2  # number of classes

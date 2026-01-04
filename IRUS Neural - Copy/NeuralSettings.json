@@ -1,0 +1,52 @@
+{
+    "start_stop_key": "F3",
+    "change_area_key": "F1",
+    "exit_key": "F4",
+    "shake_area": {
+        "x": 412,
+        "y": 186,
+        "width": 1800,
+        "height": 877
+    },
+    "fish_area": {
+        "x": 755,
+        "y": 1088,
+        "width": 1049,
+        "height": 184
+    },
+    "friend_area": {
+        "x": 7,
+        "y": 1295,
+        "width": 115,
+        "height": 120
+    },
+    "always_on_top": true,
+    "auto_minimize": true,
+    "selected_model": "Maelstrom Rod.pt",
+    "selected_shake_model": "Shake.pt",
+    "shake_model_confidence": 0.75,
+    "shake_timeout": 5.0,
+    "duplicate_shake_override": 1.0,
+    "show_debug_overlay": true,
+    "cast_hold_time": 0.5,
+    "post_fish_wait": 2.0,
+    "gate1_timeout": 20.0,
+    "auto_select_rod": true,
+    "rod_slot": 1,
+    "equipment_bag_slot": 2,
+    "auto_select_rod_delay": 250,
+    "model_confidence": 0.75,
+    "kp": 0.45,
+    "kd": 0.1,
+    "bar_ratio": 0.6,
+    "speed_alpha": 0.9,
+    "damping_forward": 2.3,
+    "damping_reverse": 0.7,
+    "maelstrom_mode": true,
+    "maelstrom_y_coord": 95,
+    "maelstrom_color_tolerance": 0,
+    "maelstrom_scan_left_margin": 0.2,
+    "maelstrom_scan_right_margin": 0.3,
+    "maelstrom_left_section": 0.2,
+    "maelstrom_right_section": 0.4
+}

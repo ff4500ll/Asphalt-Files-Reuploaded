@@ -1,0 +1,4 @@
+names:
+  0: Shake
+path: .
+train: train.txt

@@ -1,0 +1,5 @@
+names:
+  0: Icon
+  1: Bar
+path: .
+train: train.txt

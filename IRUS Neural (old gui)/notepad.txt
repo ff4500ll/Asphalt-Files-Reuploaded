@@ -1,0 +1,17 @@
+1.png
+line 1: 464
+line 2: 511
+line 3: 521
+line 4: 568
+
+2.png
+line 1: 475
+line 2: 509
+line 3: 523
+line 4: 557
+
+3.png
+line 1: 413
+line 2: 511
+line 3: 521
+line 4: 619
