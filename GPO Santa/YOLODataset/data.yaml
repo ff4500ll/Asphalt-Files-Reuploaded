@@ -1,0 +1,12 @@
+# YOLO Dataset Configuration
+# Generated from: Santa2
+
+path: c:\Users\8USB\Desktop\Clutter\Autohotkey\GPO Santa\YOLODataset
+train: images/train
+val: images/train  # Using same as train for now
+
+names:
+  0: Icon
+  1: Santa
+
+nc: 2  # number of classes

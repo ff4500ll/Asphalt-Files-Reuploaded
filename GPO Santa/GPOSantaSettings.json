@@ -1,0 +1,75 @@
+{
+  "selected_model": "Santa Normal.pt",
+  "always_on_top": true,
+  "auto_minimize": false,
+  "show_visualization": false,
+  "first_person_mode": false,
+  "use_gpu": true,
+  "icon_confidence": 0.5,
+  "santa_confidence": 0.1,
+  "end_delay": 15.0,
+  "main_tool": "1",
+  "anything_else": "2",
+  "hotkeys": {
+    "start_stop": "F1",
+    "exit": "F2",
+    "record": "F3"
+  },
+  "recorded_actions": [
+    [
+      0.3638777732849121,
+      "key_press",
+      "t"
+    ],
+    [
+      0.4224100112915039,
+      "key_release",
+      "t"
+    ],
+    [
+      1.6835649013519287,
+      "key_press",
+      "3"
+    ],
+    [
+      1.755375862121582,
+      "key_release",
+      "3"
+    ],
+    [
+      2.501099109649658,
+      "key_press",
+      "x"
+    ],
+    [
+      14.126945734024048,
+      "key_release",
+      "x"
+    ],
+    [
+      14.900747537612915,
+      "key_press",
+      "1"
+    ],
+    [
+      14.945406198501587,
+      "key_release",
+      "1"
+    ],
+    [
+      15.606606483459473,
+      "key_press",
+      "t"
+    ],
+    [
+      15.660782098770142,
+      "key_release",
+      "t"
+    ],
+    [
+      16.747833251953125,
+      "end_marker",
+      null
+    ]
+  ]
+}
