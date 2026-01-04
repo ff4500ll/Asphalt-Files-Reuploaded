@@ -1,0 +1,4 @@
+﻿$lbutton::
+$rbutton::
+shutdown
+return

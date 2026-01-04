@@ -1,0 +1,12 @@
+# YOLO Dataset Configuration
+path: C:/Users/8USB/Desktop/Clutter/Autohotkey/IRUS/Images/Processed/Shake
+train: images/train
+val: images/val
+
+# Classes
+names:
+  0: Target Line
+  1: Fish Bar
+
+# Number of classes
+nc: 2

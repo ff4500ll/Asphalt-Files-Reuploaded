@@ -1,0 +1,6 @@
+pyinstaller --onefile --noconsole z.py
+
+python -m PyInstaller --onefile --noconsole --name "AutoEnchant" z.py
+
+pyinstaller --onefile --noconsole --name "AutoEnchant" --exclude-module torch --exclude-module torchvision --exclude-module scipy --exclude-module pandas --exclude-module matplotlib --exclude-module networkx --exclude-module sympy --exclude-module setuptools --exclude-module torchaudio --exclude-module cv2 z.py
+
