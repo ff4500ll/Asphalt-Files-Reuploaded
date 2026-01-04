@@ -1,0 +1,55 @@
+{
+    "keybindings": {
+        "start_stop": "F1",
+        "change_area": "F2",
+        "exit": "F3"
+    },
+    "area_box": {
+        "x1": 1296,
+        "y1": 546,
+        "x2": 1550,
+        "y2": 962
+    },
+    "bite_timeout": 30.0,
+    "end_fish_timeout": 2.0,
+    "rod_key": "2",
+    "not_rod_key": "1",
+    "fruit_key": "3",
+    "kp": 0.05,
+    "kd": 1.0,
+    "blue_tolerance": 0,
+    "white_tolerance": 0,
+    "gray_tolerance": 0,
+    "auto_buy_bait": true,
+    "loops_per_purchase": 100,
+    "water_point": [
+        1003,
+        424
+    ],
+    "yes_point": [
+        1057,
+        1308
+    ],
+    "no_point": [
+        1510,
+        1303
+    ],
+    "number_point": [
+        1287,
+        1306
+    ],
+    "auto_store_fruit": true,
+    "store_fruit_point": [
+        1282,
+        1151
+    ],
+    "auto_select_bait": true,
+    "bait_point": [
+        1276,
+        1067
+    ],
+    "water_point_2": [
+        1046,
+        387
+    ]
+}
