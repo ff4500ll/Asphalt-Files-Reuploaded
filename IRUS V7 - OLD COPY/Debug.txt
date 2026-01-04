@@ -1,0 +1,2 @@
+01:01:34.159 |     INFO | === DEBUG LOGGING INITIALIZED ===
+01:01:34.159 |     INFO | [SYSTEM      ] BOT STARTING - Debug logging initialized

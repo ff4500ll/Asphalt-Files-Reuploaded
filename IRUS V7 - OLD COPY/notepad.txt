@@ -1,0 +1,152 @@
+replace everything in def FirstRunUpdateFishState and def SubsequentRunUpdateFishState with the logic below
+
+
+BREAK LINE IN NOTEPAD
+
+
+def FirstRunUpdateFishState
+
+4 line
+the 2 lines closest to the middle will be the TargetLineLeft and TargetLineRight
+then calculate the difference in pixels between TargetLineRight and TargetLineLeft, this value will be the TargetLineGap
+LeftBar = the most left line
+RightBar = the most right line
+
+BREAK LINE IN NOTEPAD
+
+
+def SubsequentRunUpdateFishState
+
+if lines 0, 1, or above 6, just dont update anything and exit
+
+6 line
+identify the 2 target lines using the TargetLinePixelGap
+new target lines = the ones that have gap nearest to the TargetLinePixelGap
+new left bar = line nearest to old left bar
+new right bar = line nearest to old right bar
+discard other 2 lines
+
+5 line
+identify the 2 target lines using the TargetLinePixelGap
+new target lines = the ones that have gap nearest to the TargetLinePixelGap
+new left bar = line nearest to old left bar 
+new right bar = line nearest to old right bar
+discard other 1 line
+
+4 line
+identify the 2 target lines using the TargetLinePixelGap
+new target lines = the ones that have gap nearest to the TargetLinePixelGap
+new left bar = line nearest to old left bar 
+new right bar = line nearest to old right bar
+
+3 line
+identify the 2 target lines using the TargetLinePixelGap
+if exists
+(
+    new target lines = the ones that nearest match the TargetLinePixelGap
+    check last line nearest to left bar or right bar
+    if nearer left bar
+    (
+        new left bar = that line
+        new right bar = old right bar (dont change)
+    )
+    else
+    (
+        new left bar = old left bar (dont change)
+        new right bar = that line
+    )
+)
+else
+(
+    new left bar = line nearest to old left bar
+    new right bar = line nearest to old right bar
+    check if last line is nearer to old left target or old right target
+    if nearer old left target
+    (
+        new left target = that line
+        new right target = new left target + TargetLinePixelGap
+    )
+    else
+    (
+        new right target = last line
+        new left target = new right target - TargetLinePixelGap
+    )
+)
+
+2 line
+identify the 2 target lines using the TargetLinePixelGap
+if exists
+(
+    new target lines = the ones that nearest match the TargetLinePixelGap
+    new left bar = old left bar (dont change)
+    new right bar = old right bar (dont change)
+)
+else
+(
+    check left line nearest to which old position
+    if left line nearer to old left bar
+    (
+        new left bar = that line
+        check if the other line nearest to which old position
+        if other line nearer to old left target
+        (
+            new left target = that line
+            new right target = new left target + TargetLinePixelGap
+            new right bar = old right bar (dont change)
+        )
+        else if other line nearer to old right target
+        (
+            new right target = that line
+            new left target = new right target - TargetLinePixelGap
+            new right bar = old right bar (dont change)
+        )
+        else
+        (
+            new right bar = that line
+            new left target = old left target (dont change)
+            new right target = old right target (dont change)
+        )
+    )
+    else if left line nearer to old left target
+    (
+        new left target = that line
+        new right target = new left target + TargetLinePixelGap
+        new right bar = the other line
+        new left bar = old left bar (dont change)
+    )
+    else
+    (
+        new right target = that line
+        new left target = new right target - TargetLinePixelGap
+        new right bar = the other line
+        new left bar = old left bar (dont change)
+    )
+)
+
+
+
+
+
+when entering ShakeStage
+activate Update_Fish_Status at a rate of 10 fps or 20 fps depending on the setting under ShakeStage linked in the gui
+activate Update_Shake_Status at a rate of 10 fps or 20 fps depending on the setting under ShakeStage linked in the gui
+start a 3 second timer CREATE A NEW SETTING FOR IT, DONT USE EXISTING ONE IN GUI NAMED FAILED SHAKE timeout
+name the new timer "No Circle Found Timeout"
+and rename the "Failed Shake Timeout" to "Duplicate Circle Timeout"
+
+if Update_Shake_Status clicks a circle, the timer resets back to 1 second
+if Update_Fish_Status shows "4 lines", it "passes" and continues to next stage which is FishStage
+if the 1 second timer runs out without getting reset or passing to FishStage, it will exit the 3 stage loop and return back to the FirstStage
+
+during Update_Shake_Status
+find circle
+check if circle was same as previous circle
+if yes
+(
+    start a timer using "Duplicate Circle Timeout" in the GUI
+)
+if no
+(
+    click
+)
+during the timer, if it keeps detecting the same circle until the end of the timer, reset the "previous area" so it will just click the circle it sees
