@@ -1,0 +1,45 @@
+{
+    "keybindings": {
+        "start_stop": "F1",
+        "change_area": "F2",
+        "exit": "F3"
+    },
+    "areas": {
+        "inventory": {
+            "x1": 1876,
+            "y1": 431,
+            "x2": 2453,
+            "y2": 1021
+        },
+        "fill": {
+            "x1": 389,
+            "y1": 472,
+            "x2": 592,
+            "y2": 992
+        },
+        "pour": {
+            "x1": 2269,
+            "y1": 240,
+            "x2": 2405,
+            "y2": 1204
+        },
+        "forge": {
+            "x1": 403,
+            "y1": 240,
+            "x2": 2271,
+            "y2": 1204
+        }
+    },
+    "enabled_ores": {},
+    "ore_amount": 3,
+    "forge_click_distance_multiplier": 1.0,
+    "timing_settings": {
+        "ore_check_wait": 1.0,
+        "pre_fill_wait": 4.0,
+        "pre_pour_wait": 5.0,
+        "pre_forge_wait": 2.5,
+        "cycle_restart_wait": 5.0
+    },
+    "fast_forge_gamepass": false,
+    "manual_select_ores": false
+}

@@ -1,0 +1,47 @@
+{
+    "keybindings": {
+        "start_stop": "F1",
+        "change_area": "F2",
+        "exit": "F3"
+    },
+    "areas": {
+        "inventory": {
+            "x1": 1250,
+            "y1": 287,
+            "x2": 1635,
+            "y2": 680
+        },
+        "fill": {
+            "x1": 259,
+            "y1": 314,
+            "x2": 394,
+            "y2": 661
+        },
+        "pour": {
+            "x1": 1512,
+            "y1": 160,
+            "x2": 1603,
+            "y2": 802
+        },
+        "forge": {
+            "x1": 268,
+            "y1": 160,
+            "x2": 1514,
+            "y2": 802
+        }
+    },
+    "enabled_ores": {
+        "Lapis Lazuli": true
+    },
+    "ore_amount": 3,
+    "forge_click_distance_multiplier": 1.0,
+    "timing_settings": {
+        "ore_check_wait": 1.0,
+        "pre_fill_wait": 4.0,
+        "pre_pour_wait": 5.0,
+        "pre_forge_wait": 2.5,
+        "cycle_restart_wait": 5.0
+    },
+    "fast_forge_gamepass": false,
+    "manual_select_ores": false
+}

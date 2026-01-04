@@ -1,0 +1,34 @@
+green
+RGB: (109, 174, 32) | R:109 G:174 B: 32
+
+
+yellow
+RGB: (183, 164, 74) | R:183 G:164 B: 745
+white
+RGB: (207, 207, 207) | R:207 G:207 B:207
+
+
+
+
+
+
+
+
+
+Sell Macro
+Max Position: (1522,  689)
+Minus 5 Position: (1134,  685)
+Select Position: (1275,  807)
+Accept Position: (1274,  996)
+Yes Position: (1134,  781)
+
+mine Position: (2079,  690)
+
+
+
+
+
+
+
+
+80x35 the image size for ore

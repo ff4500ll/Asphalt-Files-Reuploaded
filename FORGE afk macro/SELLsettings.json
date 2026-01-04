@@ -1,0 +1,53 @@
+{
+    "keybindings": {
+        "start_stop": "F1",
+        "change_area": "F2",
+        "exit": "F3"
+    },
+    "area": {
+        "x1": 680,
+        "y1": 436,
+        "x2": 1254,
+        "y2": 901
+    },
+    "keep_amounts": {
+        "Amethyst.png": 0,
+        "Cuprite.png": 0,
+        "Diamond.png": 0,
+        "Emerald.png": 0,
+        "Mythril.png": 0,
+        "Quartz.png": 0,
+        "Rivalite.png": 0,
+        "Ruby.png": 0,
+        "Sapphire.png": 0,
+        "Topaz.png": 0,
+        "Uranium.png": 0
+    },
+    "mining_wait_minutes": 30,
+    "ui_positions": {
+        "max_button": [
+            1517,
+            687
+        ],
+        "minus_5_button": [
+            1131,
+            684
+        ],
+        "select_button": [
+            1281,
+            807
+        ],
+        "accept_button": [
+            1276,
+            989
+        ],
+        "yes_button": [
+            1139,
+            776
+        ],
+        "mine_position": [
+            2096,
+            723
+        ]
+    }
+}
