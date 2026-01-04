@@ -1,0 +1,136 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+#ifWinActive, Roblox
+CoordMode Pixel
+setkeydelay, 0
+setmousedelay, 0
+
+$m::
+suspend, off
+reload
+return
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+ImageSearch, xxx, yyy, 0, 0, A_ScreenWidth, A_ScreenHeight, *10 %A_ScriptDir%\Ferryman\Blessed.png
+xxx and yyy = return variables for top left of image found
+errorlevel 0 = found
+errorlevel 1 = not found
+errorlevel 2 = cant even start finding
+
+DllCall("mouse_event", "UInt", 0x01, "UInt", 1100, "UInt", 0)
+positive = right
+negative = left
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+loadchecker:
+ImageSearch, xxx, yyy, 0, 0, A_ScreenWidth, A_ScreenHeight, *30 %A_ScriptDir%\Ferryman\PressKeyToBegin.png
+if (ErrorLevel = 0)
+{
+settimer, loadchecker, off
+loaded := true
+}
+return
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+multiple scan example
+
+p::
+gosub, imagescan
+return
+
+imagescan:
+ImageSearch, xxx, yyy, 0, 0, A_ScreenWidth, A_ScreenHeight, *10 %A_ScriptDir%\Ferryman\Idol.png
+if (ErrorLevel = 0)
+{
+click, %xxx%, %yyy%
+sleep 300
+}
+ImageSearch, xxx, yyy, 0, 0, A_ScreenWidth, A_ScreenHeight, *10 %A_ScriptDir%\Ferryman\Insignia.png
+if (ErrorLevel = 0)
+{
+click, %xxx%, %yyy%
+sleep 300
+}
+return
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+loop, until example
+
+loop,
+{
+  ImageSearch, xxx, yyy, 0, 0, A_ScreenWidth, A_ScreenHeight, *10 %A_ScriptDir%\Ferryman\Insignia.png
+  if (ErrorLevel = 0)
+  {
+  continue = true
+  }
+} until continue = true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+the campfire track shit
+
+$o::
+loop,
+{
+send {b down}
+sleep 5
+send {b up}
+sleep 5
+ImageSearch, xxx, yyy, 300, 20, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\Ferryman\CampfireColor.png
+  if (ErrorLevel = 0)
+  {
+
+    DllCall("mouse_event", "UInt", 0x01, "UInt", 0, "UInt", 3000)
+
+    yyyy := yyy - 60
+    tooltip, Found Campfire, %xxx%, %yyyy%, 1
+
+    if xxx < 940
+      {
+      DllCall("mouse_event", "UInt", 0x01, "UInt", -50, "UInt", 0)
+      }
+    else if xxx > 980
+      {
+      DllCall("mouse_event", "UInt", 0x01, "UInt", 50, "UInt", 0)
+      }
+
+    if yyy < 420
+      {
+      send {s up}
+      send {w down}
+      }
+    else if yyy > 490
+      {
+      send {w up}
+      send {s down}
+      }
+    else
+      {
+      send {w up}
+      send {s up}
+      }
+
+  }
+
+  if (ErrorLevel = 1)
+  {
+  tooltip, No Campfires Found, 300, 500, 1
+  send {w up}
+  send {s up}
+  DllCall("mouse_event", "UInt", 0x01, "UInt", 500, "UInt", 0)
+  sleep 10
+  DllCall("mouse_event", "UInt", 0x01, "UInt", 0, "UInt", 3000)
+  sleep 10
+  DllCall("mouse_event", "UInt", 0x01, "UInt", 0, "UInt", -500)
+  sleep 10
+
+  }
+
+}
+return
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

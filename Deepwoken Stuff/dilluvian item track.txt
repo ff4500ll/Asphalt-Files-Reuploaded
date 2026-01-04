@@ -1,0 +1,19 @@
+monster armor: 45%
+dvm: 63%
+
+Dilluvians Completed: 0
+(wave 50)
+
+enchant stones: 0
+enchant items: 2
+void spire: 0
+rain spire: 0
+stormseye: 0
+warmaster: 0
+moonseye: 0
+armorer: 0
+sinners: 0
+curved: 0
+smiths: 0
+crypt: 0
+idol: 1
