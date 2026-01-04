@@ -1,0 +1,43 @@
+{
+    "hotkeys": {
+        "start_stop": "F3",
+        "change_area": "F1",
+        "exit": "F4"
+    },
+    "area_boxes": {
+        "indicator_box": {
+            "x1": 1213,
+            "y1": 511,
+            "x2": 1348,
+            "y2": 655
+        },
+        "fish_box": {
+            "x1": 701,
+            "y1": 1056,
+            "x2": 1858,
+            "y2": 1122
+        }
+    },
+    "detection_settings": {
+        "color_tolerance": 5,
+        "lure_timeout": 15,
+        "fish_timeout": 3,
+        "bar_tolerance": 5,
+        "arrow_tolerance": 5,
+        "fish_tolerance": 5,
+        "treasure_tolerance": 5,
+        "kp": 1.0,
+        "kd": 0.5,
+        "click_duration": 1.0,
+        "cast_hold_duration": 0.8,
+        "cast_release_delay": 1.0
+    },
+    "keybind_settings": {
+        "not_rod_keybind": 1,
+        "rod_keybind": 3
+    },
+    "feature_toggles": {
+        "get_chest": true,
+        "new_fish_wait": true
+    }
+}
