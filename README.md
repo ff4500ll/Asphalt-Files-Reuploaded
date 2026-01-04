@@ -48,8 +48,8 @@ https://discord.com/invite/vKVBbyfHTD
 - IRUS Neural\dist\IRUS Neural v5.exe
 - IRUS Neural\dist\IRUS Neural v6.exe
 
-![Removed](Screenshot 2026-01-04 073811.png)
-![Removed](Screenshot 2026-01-04 073818.png)
+![Removed](https://github.com/ff4500ll/Asphalt-Files-Reuploaded/blob/master/Screenshot%202026-01-04%20073811.png)
+![Removed](https://github.com/ff4500ll/Asphalt-Files-Reuploaded/blob/master/Screenshot%202026-01-04%20073818.png)
 
 ## All credits goes to AsphaltCake
 
