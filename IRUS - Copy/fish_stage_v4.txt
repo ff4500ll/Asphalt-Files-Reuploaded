@@ -1,0 +1,340 @@
+# V4-STYLE FISH STAGE - Complete implementation to replace current fish stage in p.py
+# This implements v4's exact state machine: IDLE → FISHING with all v4 logic
+# YOLO replaces pixel detection, everything else is identical to v4
+
+                # Fish step
+                if self.active_settings.get("flow_fish_enabled", True):
+                    print("[Loop] Fish stage started")
+
+                    # Cache debug overlay setting 
+                    show_live_feed = self.active_settings.get("fish_show_live_feed", False)
+
+                    # Create debug overlay for visual feedback if enabled
+                    if show_live_feed:
+                        self.create_debug_overlay()
+
+                    # Get fish box coordinates
+                    fish_box = self.active_settings.get("fish_box")
+                    fish_x1, fish_y1 = fish_box["x1"], fish_box["y1"]
+                    fish_x2, fish_y2 = fish_box["x2"], fish_box["y2"]
+                    capture_width = fish_x2 - fish_x1
+                    capture_height = fish_y2 - fish_y1
+                
+                    confidence_threshold = self.active_settings.get("fishing_confidence_threshold", 0.5)
+                
+                    # V4-Style Controller Parameters
+                    KP = self.active_settings.get("fish_kp", 0.8)
+                    KD = self.active_settings.get("fish_kd", 0.0)
+                    target_tol_px = self.active_settings.get("fish_target_tol_px", 10.0)
+                    pd_clamp = self.active_settings.get("fish_pd_clamp", 100.0)
+                    boundary_factor = self.active_settings.get("fish_boundary_factor", 0.15)
+                    cooldown_duration = self.active_settings.get("fish_cooldown_duration", 1.0)
+                
+                    print("[Fish] V4-Style State Machine Initialized")
+                    print(f"[Fish] KP={KP}, KD={KD}, Target_Tol={target_tol_px}px, PD_Clamp=±{pd_clamp}")
+                    print(f"[Fish] Boundary={boundary_factor}, Cooldown={cooldown_duration}s")
+                    print(f"[Fish] Running at YOLO speed (~50 FPS)")
+                
+                    # Reset state machine for this fishing attempt
+                    self.fishing_state = "IDLE"
+                    self.estimated_box_length = 0.0
+                    self.has_calculated_length_once = False
+                    self.last_left_x = None
+                    self.last_right_x = None
+                    self.box_center_x = None
+                    self.lost_target_line_time = 0.0
+                    self.tracking_lost_time = 0.0
+                    self.last_error = None
+                    self.last_target_x = None
+                    self.is_holding_click = False
+                
+                    # Track last loop time for time delta calculations
+                    last_time = time.time()
+                
+                    # Main control loop (V4-style state machine)
+                    while self.loop_running:
+                    
+                        current_time = time.time()
+                        time_delta = current_time - last_time
+                        last_time = current_time
+                    
+                        # ==================== YOLO DETECTION (Replaces v4 Pixel Detection) ====================
+                        monitor = {"top": fish_y1, "left": fish_x1, "width": capture_width, "height": capture_height}
+                        sct_img = sct.grab(monitor)
+                        fish_frame = np.array(sct_img)
+                        fish_frame = cv2.cvtColor(fish_frame, cv2.COLOR_BGRA2BGR)
+                    
+                        fishing_results = fishing_model(
+                            fish_frame,
+                            verbose=False,
+                            conf=confidence_threshold,
+                            iou=0.3,
+                            max_det=2
+                        )
+                    
+                        # Extract YOLO detections
+                        target_line_x = None
+                        bar_left_x = None
+                        bar_right_x = None
+                        bar_center_x = None
+                        target_line_pixel_count = 0  # For v4 idle threshold check
+                        box_pixel_count = 0
+                    
+                        for result in fishing_results:
+                            for box in result.boxes:
+                                class_id = int(box.cls[0].item())
+                                class_name = fishing_model.names[class_id]
+                                confidence = float(box.conf[0].item())
+                            
+                                if confidence < confidence_threshold:
+                                    continue
+                                
+                                # Get bounding box coordinates
+                                xyxy = box.xyxy[0].cpu().numpy()  # [x1, y1, x2, y2]
+                                x_center = int((xyxy[0] + xyxy[2]) / 2)
+                                box_width = int(xyxy[2] - xyxy[0])
+                                box_height = int(xyxy[3] - xyxy[1])
+                            
+                                if class_name == "Target Line":
+                                    target_line_x = x_center
+                                    target_line_pixel_count = box_width * box_height  # Approximate pixel count
+                                elif class_name == "Fish Bar":
+                                    bar_left_x = int(xyxy[0])
+                                    bar_right_x = int(xyxy[2])
+                                    bar_center_x = x_center
+                                    box_pixel_count = box_width * box_height
+                    
+                        # Update debug overlay if enabled
+                        if show_live_feed:
+                            self.update_debug_overlay(target_line_x, bar_left_x, bar_right_x, bar_center_x)
+                    
+                        # ==================== V4 STATE MACHINE ====================
+                    
+                        # IDLE STATE: Wait for Target Line AND Fish Bar to appear
+                        if self.fishing_state == "IDLE":
+                            # V4: idle_threshold for target_line_pixel_count (we use 100 as threshold)
+                            idle_threshold = 100  # If YOLO detected target line, pixel_count will be > 100
+                        
+                            if (target_line_pixel_count >= idle_threshold) and (box_pixel_count > 100):
+                                # Transition to FISHING
+                                self.fishing_state = "FISHING"
+                                print(f"[Fish] IDLE → FISHING. Target Line and Fish Bar detected!")
+                            
+                                # Ensure mouse is released before starting
+                                if self.is_holding_click:
+                                    mouse_up()
+                                    self.is_holding_click = False
+                            
+                                # Calculate initial box length from YOLO detection
+                                if bar_left_x is not None and bar_right_x is not None:
+                                    new_length = bar_right_x - bar_left_x
+                                    if 10 < new_length < capture_width:
+                                        self.estimated_box_length = new_length
+                                        self.last_left_x = float(bar_left_x)
+                                        self.last_right_x = float(bar_right_x)
+                                        self.box_center_x = (self.last_left_x + self.last_right_x) / 2.0
+                                        self.has_calculated_length_once = True
+                                        print(f"[Fish] Initial Box Length: {new_length:.1f}px, Center: {self.box_center_x:.1f}px")
+                            
+                                # FALL THROUGH to FISHING state logic below
+                            else:
+                                # Still IDLE - waiting for both detections
+                                status_msg = f"[Fish] IDLE - Waiting... Target: {target_line_pixel_count}px, Box: {box_pixel_count}px"
+                                print(status_msg)
+                                continue  # Skip to next loop iteration
+                    
+                        # ==================== FISHING STATE ====================
+                        if self.fishing_state == "FISHING":
+                        
+                            # --- Target Line LOST Cooldown ---
+                            if target_line_x is None:
+                                # Target line lost - start or continue cooldown
+                                if self.lost_target_line_time == 0.0:
+                                    self.lost_target_line_time = current_time
+                                    print(f"[Fish] Target line LOST. Starting {cooldown_duration}s cooldown...")
+                            
+                                # Check if cooldown expired
+                                if current_time - self.lost_target_line_time >= cooldown_duration:
+                                    self.fishing_state = "IDLE"
+                                    print("[Fish] FISHING → IDLE. Target line lost for too long.")
+                                    # Don't use continue - let it fall through to loop complete
+                                    break  # Exit fishing loop, return to cast
+                            
+                                # Still in cooldown - release mouse and wait
+                                if self.is_holding_click:
+                                    mouse_up()
+                                    self.is_holding_click = False
+                            
+                                time_left = cooldown_duration - (current_time - self.lost_target_line_time)
+                                print(f"[Fish] Line Lost Cooldown | Time Left: {time_left:.2f}s | RELEASE")
+                            
+                                # Reset PD state
+                                self.last_target_x = None
+                                self.last_error = None
+                            
+                                continue  # Skip control logic this frame
+                            else:
+                                # Target line found - reset cooldown
+                                self.lost_target_line_time = 0.0
+                        
+                            # --- Tracking Logic (Color Detection → YOLO Detection) ---
+                            tracking_successful = False
+                        
+                            # Direct YOLO Tracking (replaces v4's color tracking)
+                            if box_pixel_count > 100 and bar_left_x is not None and bar_right_x is not None:
+                                new_length = bar_right_x - bar_left_x
+                            
+                                if 10 < new_length < capture_width:
+                                    self.estimated_box_length = new_length
+                                    self.last_left_x = float(bar_left_x)
+                                    self.last_right_x = float(bar_right_x)
+                                    self.box_center_x = (self.last_left_x + self.last_right_x) / 2.0
+                                    self.has_calculated_length_once = True
+                                    tracking_successful = True
+                                    status_color_mode = "Direct YOLO Tracking"
+                                else:
+                                    status_color_mode = "YOLO Tracking Failed (Bad Size)"
+                            else:
+                                status_color_mode = "YOLO Tracking Failed (No Box Detected)"
+                        
+                            # --- CRITICAL FALLBACK / GRACE PERIOD ---
+                            tracking_fully_lost = (target_line_x is not None and not tracking_successful)
+                        
+                            if not tracking_fully_lost:
+                                # Tracking is back (or never lost), reset timer
+                                self.tracking_lost_time = 0.0
+                        
+                            if tracking_fully_lost:
+                                if self.tracking_lost_time == 0.0:
+                                    self.tracking_lost_time = current_time
+                                    print(f"[Fish] Box tracking LOST. Starting {cooldown_duration}s grace period...")
+                            
+                                # --- GRACE PERIOD ACTIVE (No Spam Click - Release Mouse) ---
+                                if current_time - self.tracking_lost_time < cooldown_duration:
+                                    if self.is_holding_click:
+                                        mouse_up()
+                                        self.is_holding_click = False
+                                
+                                    # Reset PD state
+                                    self.last_error = None
+                                    self.last_target_x = None
+                                
+                                    time_left = cooldown_duration - (current_time - self.tracking_lost_time)
+                                    print(f"[Fish] Grace Period | Time Left: {time_left:.2f}s | RELEASE")
+                                
+                                    continue  # Skip PD control
+                            
+                                # --- GRACE PERIOD EXPIRED (Engage Spam Click) ---
+                                else:
+                                    # Toggle hold state every frame for spam clicking
+                                    should_hold = not self.is_holding_click
+                                
+                                    # Align box center to target line to prevent runaway
+                                    self.box_center_x = target_line_x
+                                    self.last_left_x = None
+                                    self.last_right_x = None
+                                
+                                    # Reset PD state
+                                    self.last_error = None
+                                    self.last_target_x = None
+                                
+                                    status_color_mode = "CRITICAL SPAM (Grace Expired)"
+                                
+                                    # Execute spam click
+                                    if should_hold and not self.is_holding_click:
+                                        mouse_down()
+                                        self.is_holding_click = True
+                                    elif not should_hold and self.is_holding_click:
+                                        mouse_up()
+                                        self.is_holding_click = False
+                                
+                                    control_state = "HOLD" if self.is_holding_click else "RELEASE"
+                                    box_len = f"{self.estimated_box_length:.1f}" if self.has_calculated_length_once else "..."
+                                    print(f"[Fish] {status_color_mode} | Ctrl: {control_state} | Box Len: {box_len}px")
+                                
+                                    continue  # Skip standard PD control
+                        
+                            # --- CONTROL LOGIC (V4-Style PD Controller with Boundary Override) ---
+                            if target_line_x is not None and self.box_center_x is not None and self.has_calculated_length_once:
+                            
+                                error = target_line_x - self.box_center_x  # Positive = target RIGHT of bar (need HOLD)
+                            
+                                # Boundary margin calculation
+                                boundary_px_margin = self.estimated_box_length * boundary_factor
+                            
+                                # --- A. Boundary Override Check (V4 Emergency Mode) ---
+                                is_near_left_boundary = (target_line_x < boundary_px_margin)
+                                is_near_right_boundary = (target_line_x > capture_width - boundary_px_margin)
+                            
+                                if is_near_left_boundary:
+                                    control_signal = -pd_clamp  # Max Release
+                                    status_suffix = " | Boundary Override: Max RELEASE"
+                                    should_hold = False
+                                elif is_near_right_boundary:
+                                    control_signal = pd_clamp  # Max Hold
+                                    status_suffix = " | Boundary Override: Max HOLD"
+                                    should_hold = True
+                                else:
+                                    # --- B. PD Control Calculation ---
+                                    P_term = KP * error
+                                    D_term = 0.0
+                                
+                                    if self.last_error is not None and time_delta > 0.001:
+                                        error_rate = (error - self.last_error) / time_delta
+                                        D_term = KD * error_rate
+                                
+                                    control_signal = P_term + D_term
+                                    control_signal = np.clip(control_signal, -pd_clamp, pd_clamp)
+                                    status_suffix = f" | PD Control: Signal={control_signal:+.2f}"
+                                
+                                    # Update PD state
+                                    self.last_error = error
+                                    self.last_target_x = target_line_x
+                                
+                                    # --- C. Convert Control Signal to Action (Dead Zone = Spam Click) ---
+                                    action_threshold = target_tol_px
+                                
+                                    if control_signal > action_threshold:
+                                        # Target far right - HOLD
+                                        should_hold = True
+                                    elif control_signal < -action_threshold:
+                                        # Target far left - RELEASE
+                                        should_hold = False
+                                    else:
+                                        # Within dead zone: Spam Click (alternate hold state)
+                                        should_hold = not self.is_holding_click
+                                        status_color_mode = "Dead Zone SPAM"
+                                        status_suffix = " | Dead Zone SPAM"
+                            
+                                # --- D. Execute Mouse Action ---
+                                if should_hold and not self.is_holding_click:
+                                    mouse_down()
+                                    self.is_holding_click = True
+                                elif not should_hold and self.is_holding_click:
+                                    mouse_up()
+                                    self.is_holding_click = False
+                            
+                                # Debug output
+                                control_state = "HOLD" if self.is_holding_click else "RELEASE"
+                                print(f"[PD Control] Error: {error:+4.0f}px | P: {P_term:+6.1f} | Signal: {control_signal:+6.1f} | {control_state}{status_suffix}")
+                        
+                            else:
+                                # Fallback - lost tracking data but not fully lost
+                                if self.is_holding_click:
+                                    mouse_up()
+                                    self.is_holding_click = False
+                                print(f"[Fish] Tracking Lost/Waiting | RELEASE")
+                            
+                                # Reset PD state
+                                self.last_target_x = None
+                        
+                        # NO SLEEP - run at YOLO speed (~50 FPS)
+                        # ============================================================
+                
+                    # Cleanup
+                    if self.is_holding_click:
+                        mouse_up()
+                        self.is_holding_click = False
+                
+                    print("[Fish] Fish stage stopped")
+                    print("[Loop] Fish stage complete")

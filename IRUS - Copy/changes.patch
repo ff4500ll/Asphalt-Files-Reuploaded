@@ -1,0 +1,630 @@
+diff --git a/p.py b/p.py
+index d5ca406..358ea66 100644
+--- a/p.py
++++ b/p.py
+@@ -168,10 +168,10 @@ class HotkeyConfigApp:
+     def create_scrollable_frame(self, parent):
+         """Create a scrollable frame with canvas and scrollbar"""
+         # Create canvas and scrollbars for scrolling
+-        canvas = tk.Canvas(parent, bg="white", highlightthickness=0)
++        canvas = tk.Canvas(parent, bg="#1a1a1a", highlightthickness=0)
+         v_scrollbar = ttk.Scrollbar(parent, orient="vertical", command=canvas.yview)
+         h_scrollbar = ttk.Scrollbar(parent, orient="horizontal", command=canvas.xview)
+-        scrollable_frame = tk.Frame(canvas, bg="white")
++        scrollable_frame = tk.Frame(canvas, bg="#1a1a1a")
+ 
+         scrollable_frame.bind(
+             "<Configure>",
+@@ -185,16 +185,47 @@ class HotkeyConfigApp:
+         v_scrollbar.pack(side="right", fill="y", before=canvas)
+         h_scrollbar.pack(side="bottom", fill="x")
+ 
+-        # Enable mousewheel scrolling - bind to canvas, not all widgets
+-        def on_mousewheel(event):
+-            canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
++        # Smooth scrolling variables
++        canvas._scroll_target = 0
++        canvas._scroll_animation = None
++
++        # Enable smooth mousewheel scrolling
++        def smooth_scroll(event):
++            # Calculate scroll amount
++            delta = int(-1 * (event.delta / 120))
++            canvas._scroll_target = canvas.yview()[0] + (delta * 0.05)  # Smooth scroll amount
++            canvas._scroll_target = max(0, min(1, canvas._scroll_target))
++            animate_scroll(canvas)
++
++        def animate_scroll(canvas_widget):
++            """Animate scrolling smoothly"""
++            try:
++                if not canvas_widget.winfo_exists() or not self.root.winfo_exists():
++                    return
++
++                current_pos = canvas_widget.yview()[0]
++                target_pos = canvas_widget._scroll_target
++                diff = target_pos - current_pos
++
++                if abs(diff) > 0.001:  # Continue if not at target
++                    new_pos = current_pos + (diff * 0.3)  # Smooth easing
++                    canvas_widget.yview_moveto(new_pos)
++                    callback_id = canvas_widget.after(16, lambda: animate_scroll(canvas_widget))
++                    canvas_widget._scroll_animation = callback_id
++                    # Track for cleanup
++                    if hasattr(self, 'pending_animations'):
++                        self.pending_animations.append(callback_id)
++                else:
++                    canvas_widget._scroll_animation = None
++            except:
++                pass
+ 
+         def on_shift_mousewheel(event):
+             canvas.xview_scroll(int(-1 * (event.delta / 120)), "units")
+ 
+         # Bind to the canvas and the scrollable frame to capture mouse events
+         def on_enter(e):
+-            canvas.bind_all("<MouseWheel>", on_mousewheel)
++            canvas.bind_all("<MouseWheel>", smooth_scroll)
+             canvas.bind_all("<Shift-MouseWheel>", on_shift_mousewheel)
+ 
+         def on_leave(e):
+@@ -206,59 +237,131 @@ class HotkeyConfigApp:
+ 
+         return scrollable_frame
+ 
++    def create_premium_button(self, parent, text, command, bg_color, hover_color=None, **kwargs):
++        """Create a premium-styled button with hover effects"""
++        if hover_color is None:
++            # Darken the bg_color slightly for hover
++            hover_color = bg_color
++
++        # Default button styling
++        default_kwargs = {
++            "text": text,
++            "command": command,
++            "bg": bg_color,
++            "fg": "white",
++            "font": ("Segoe UI", 10, "bold"),
++            "relief": "flat",
++            "borderwidth": 0,
++            "cursor": "hand2",
++            "activebackground": hover_color,
++            "activeforeground": "white",
++            "padx": 28,
++            "pady": 12
++        }
++        default_kwargs.update(kwargs)
++
++        btn = tk.Button(parent, **default_kwargs)
++
++        # Add hover effects
++        def on_enter(_):
++            btn.config(bg=hover_color)
++
++        def on_leave(_):
++            btn.config(bg=bg_color)
++
++        btn.bind("<Enter>", on_enter)
++        btn.bind("<Leave>", on_leave)
++
++        return btn
++
++    def create_premium_card(self, parent, bg="#1e3a5f", border_color="#0d47a1"):
++        """Create a premium card-style frame without shadow"""
++        # Main card frame with border
++        card_frame = tk.Frame(
++            parent,
++            bg=bg,
++            relief="solid",
++            bd=0,
++            highlightbackground=border_color,
++            highlightthickness=2
++        )
++
++        return card_frame
++
+     def build_gui(self):
+         """Build the GUI interface"""
+-        # Configure root window
+-        self.root.configure(bg="#f0f2f5")
++        # Configure root window with dark background
++        self.root.configure(bg="#1a1a1a")
+         self.root.resizable(True, True)
+         self.root.minsize(700, 550)
+ 
+-        # Header frame with gradient effect (simulated with two frames)
+-        header_frame = tk.Frame(self.root, bg="#1976D2", height=80)
++        # Header frame with modern gradient (dark blue to lighter blue)
++        header_frame = tk.Frame(self.root, bg="#0d47a1", height=90)
+         header_frame.pack(fill="x")
+         header_frame.pack_propagate(False)
+ 
++        # Gradient simulation with layered frames
++        gradient_layer = tk.Frame(header_frame, bg="#1565c0", height=20)
++        gradient_layer.pack(side="bottom", fill="x")
++
+         # Title and subtitle container
+-        title_container = tk.Frame(header_frame, bg="#1976D2")
+-        title_container.pack(expand=True)
++        title_container = tk.Frame(header_frame, bg="#0d47a1")
++        title_container.place(relx=0.5, rely=0.5, anchor="center")
+ 
+-        # Title label
++        # Title label with modern font and shadow effect
+         title_label = tk.Label(
+             title_container,
+             text="IRUS V7",
+-            font=("Segoe UI", 22, "bold"),
+-            bg="#1976D2",
++            font=("Segoe UI", 26, "bold"),
++            bg="#0d47a1",
+             fg="white"
+         )
+-        title_label.pack(pady=(15, 0))
++        title_label.pack()
+ 
+-        # Subtitle
++        # Subtitle with accent color
+         subtitle_label = tk.Label(
+             title_container,
+-            text="Advanced Fishing Automation System",
+-            font=("Segoe UI", 9),
+-            bg="#1976D2",
+-            fg="#E3F2FD"
++            text="Premium Fishing Automation System",
++            font=("Segoe UI", 10),
++            bg="#0d47a1",
++            fg="#90caf9"
+         )
+-        subtitle_label.pack(pady=(2, 15))
++        subtitle_label.pack(pady=(3, 0))
+ 
+-        # Create notebook (tabbed interface)
++        # Create notebook (tabbed interface) with dark theme
+         style = ttk.Style()
+-        style.theme_create("irus_theme", parent="alt", settings={
+-            "TNotebook": {"configure": {"tabmargins": [2, 5, 2, 0], "background": "#f0f2f5"}},
++        style.theme_create("irus_dark_theme", parent="alt", settings={
++            "TNotebook": {
++                "configure": {
++                    "tabmargins": [0, 0, 0, 0],
++                    "background": "#1a1a1a",
++                    "borderwidth": 0
++                }
++            },
+             "TNotebook.Tab": {
+-                "configure": {"padding": [25, 12], "background": "#e8eaf0", "foreground": "#424242", "font": ("Segoe UI", 10)},
++                "configure": {
++                    "padding": [28, 14],
++                    "background": "#2a2a2a",
++                    "foreground": "#90caf9",
++                    "font": ("Segoe UI", 10, "bold"),
++                    "borderwidth": 0,
++                    "focuscolor": "none"
++                },
+                 "map": {
+-                    "background": [("selected", "#1976D2"), ("active", "#d0d0d0")],
+-                    "foreground": [("selected", "white"), ("active", "#1976D2")],
+-                    "expand": [("selected", [1, 1, 1, 0])]
++                    "background": [("selected", "#0d47a1"), ("active", "#1565c0")],
++                    "foreground": [("selected", "white"), ("active", "white")],
++                    "expand": [("selected", [2, 2, 2, 0])],
++                    "padding": [("selected", [28, 16])]
+                 }
+             }
+         })
+-        style.theme_use("irus_theme")
++        style.theme_use("irus_dark_theme")
+ 
+         self.notebook = ttk.Notebook(self.root)
+-        self.notebook.pack(fill="both", expand=True, padx=12, pady=12)
++        self.notebook.pack(fill="both", expand=True, padx=12, pady=(0, 12))
++
++        # Store tabs for animation
++        self.pending_animations = []  # Track pending animation callbacks
+ 
+         # Create tabs
+         self.create_basic_settings_tab()
+@@ -268,43 +371,43 @@ class HotkeyConfigApp:
+ 
+     def create_basic_settings_tab(self):
+         """Create the Basic Settings tab"""
+-        tab = tk.Frame(self.notebook, bg="white")
++        tab = tk.Frame(self.notebook, bg="#1a1a1a")
+         self.notebook.add(tab, text="⚙️ Settings")
+ 
+         # Create scrollable frame
+         scrollable_frame = self.create_scrollable_frame(tab)
+ 
+         # Main container
+-        container = tk.Frame(scrollable_frame, bg="white")
++        container = tk.Frame(scrollable_frame, bg="#1a1a1a")
+         container.pack(fill="both", expand=True, padx=35, pady=25)
+ 
+         # Title with description
+-        title_frame = tk.Frame(container, bg="white")
++        title_frame = tk.Frame(container, bg="#1a1a1a")
+         title_frame.pack(fill="x", pady=(0, 25))
+ 
+         title = tk.Label(
+             title_frame,
+             text="⌨️ Hotkey Configuration",
+-            font=("Segoe UI", 15, "bold"),
+-            bg="white",
+-            fg="#1976D2"
++            font=("Segoe UI", 16, "bold"),
++            bg="#1a1a1a",
++            fg="#90caf9"
+         )
+         title.pack(anchor="w")
+ 
+         desc = tk.Label(
+             title_frame,
+             text="Configure keyboard shortcuts to control the automation",
+-            font=("Segoe UI", 9),
+-            bg="white",
+-            fg="#757575"
++            font=("Segoe UI", 10),
++            bg="#1a1a1a",
++            fg="#b0bec5"
+         )
+         desc.pack(anchor="w", pady=(5, 0))
+ 
+-        # Settings frame with border
+-        settings_outer_frame = tk.Frame(container, bg="#f8f9fa", relief="solid", bd=1, highlightbackground="#e0e0e0", highlightthickness=1)
++        # Settings frame with card
++        settings_outer_frame = self.create_premium_card(container)
+         settings_outer_frame.pack(fill="x", pady=(0, 20))
+ 
+-        settings_frame = tk.Frame(settings_outer_frame, bg="#f8f9fa")
++        settings_frame = tk.Frame(settings_outer_frame, bg="#1e3a5f")
+         settings_frame.pack(fill="x", padx=20, pady=20)
+ 
+         # Available keys for dropdown
+@@ -348,7 +451,7 @@ class HotkeyConfigApp:
+             current_key = self.active_settings.get(action, self.first_launch_config.get(action, "F1"))
+ 
+             # Row container
+-            row_frame = tk.Frame(settings_frame, bg="#f8f9fa")
++            row_frame = tk.Frame(settings_frame, bg="#1e3a5f")
+             row_frame.grid(row=idx, column=0, columnspan=2, sticky="ew", pady=8)
+ 
+             # Icon with colored background
+@@ -371,8 +474,8 @@ class HotkeyConfigApp:
+                 row_frame,
+                 text=action,
+                 font=("Segoe UI", 11),
+-                bg="#f8f9fa",
+-                fg="#424242",
++                bg="#1e3a5f",
++                fg="white",
+                 anchor="w",
+                 width=15
+             )
+@@ -404,23 +507,28 @@ class HotkeyConfigApp:
+         options_title = tk.Label(
+             options_title_frame,
+             text="🔧 Application Options",
+-            font=("Segoe UI", 15, "bold"),
++            font=("Segoe UI", 16, "bold"),
+             bg="white",
+-            fg="#1976D2"
++            fg="#0d47a1"
+         )
+         options_title.pack(anchor="w")
+ 
+         options_desc = tk.Label(
+             options_title_frame,
+             text="Customize window behavior and preferences",
+-            font=("Segoe UI", 9),
++            font=("Segoe UI", 10),
+             bg="white",
+-            fg="#757575"
++            fg="#78909c"
+         )
+         options_desc.pack(anchor="w", pady=(5, 0))
+ 
+-        # Options frame with border
+-        options_outer_frame = tk.Frame(container, bg="#f8f9fa", relief="solid", bd=1, highlightbackground="#e0e0e0", highlightthickness=1)
++        # Options frame with card
++        options_outer_frame = self.create_premium_card(
++            container,
++            bg="#f8f9fa",
++            border_color="#e0e0e0",
++            shadow=True
++        )
+         options_outer_frame.pack(fill="x", pady=(0, 25))
+ 
+         options_frame = tk.Frame(options_outer_frame, bg="#f8f9fa")
+@@ -486,20 +594,15 @@ class HotkeyConfigApp:
+         bottom_frame = tk.Frame(container, bg="white")
+         bottom_frame.pack(fill="x", pady=10)
+ 
+-        # Reset to defaults button
+-        reset_btn = tk.Button(
++        # Reset to defaults button with premium styling
++        reset_btn = self.create_premium_button(
+             bottom_frame,
+             text="🔄 Reset to Defaults",
+-            font=("Segoe UI", 10, "bold"),
+             command=self.reset_to_defaults,
+-            bg="#FF9800",
+-            fg="white",
+-            padx=30,
+-            pady=10,
+-            relief="flat",
+-            cursor="hand2",
+-            activebackground="#F57C00",
+-            borderwidth=0
++            bg_color="#FF9800",
++            hover_color="#F57C00",
++            padx=35,
++            pady=12
+         )
+         reset_btn.pack()
+ 
+@@ -547,23 +650,28 @@ class HotkeyConfigApp:
+         title = tk.Label(
+             title_frame,
+             text="🎣 Fishing Automation Flow",
+-            font=("Segoe UI", 15, "bold"),
++            font=("Segoe UI", 16, "bold"),
+             bg="white",
+-            fg="#1976D2"
++            fg="#0d47a1"
+         )
+         title.pack(anchor="w")
+ 
+         desc = tk.Label(
+             title_frame,
+             text="Configure the automated fishing sequence and timing",
+-            font=("Segoe UI", 9),
++            font=("Segoe UI", 10),
+             bg="white",
+-            fg="#757575"
++            fg="#78909c"
+         )
+         desc.pack(anchor="w", pady=(5, 0))
+ 
+-        # Flow visualization frame with better styling
+-        flow_visual_outer = tk.Frame(container, bg="#f8f9fa", relief="solid", bd=1, highlightbackground="#e0e0e0", highlightthickness=1)
++        # Flow visualization frame with card
++        flow_visual_outer = self.create_premium_card(
++            container,
++            bg="#f8f9fa",
++            border_color="#e0e0e0",
++            shadow=True
++        )
+         flow_visual_outer.pack(fill="x", pady=(0, 20))
+ 
+         flow_frame = tk.Frame(flow_visual_outer, bg="#f8f9fa")
+@@ -750,7 +858,12 @@ class HotkeyConfigApp:
+         )
+         cast_desc.pack(anchor="w", pady=(3, 0))
+ 
+-        cast_flow_frame = tk.Frame(container, bg="#f8fdf8", relief="solid", bd=1, highlightbackground="#C8E6C9", highlightthickness=1)
++        cast_flow_frame = self.create_premium_card(
++            container,
++            bg="#f8fdf8",
++            border_color="#C8E6C9",
++            shadow=True
++        )
+         cast_flow_frame.pack(fill="x", pady=(0, 20))
+ 
+         # Cast Mode Selection
+@@ -808,7 +921,12 @@ class HotkeyConfigApp:
+         )
+         shake_desc.pack(anchor="w", pady=(3, 0))
+ 
+-        shake_flow_frame = tk.Frame(container, bg="#fffbf5", relief="solid", bd=1, highlightbackground="#FFE0B2", highlightthickness=1)
++        shake_flow_frame = self.create_premium_card(
++            container,
++            bg="#fffbf5",
++            border_color="#FFE0B2",
++            shadow=True
++        )
+         shake_flow_frame.pack(fill="x", pady=(0, 20))
+ 
+         # Shake Flow Details Frame (content changes based on enabled state)
+@@ -837,7 +955,12 @@ class HotkeyConfigApp:
+         )
+         fish_desc.pack(anchor="w", pady=(3, 0))
+ 
+-        fish_flow_frame = tk.Frame(container, bg="#f5f9fd", relief="solid", bd=1, highlightbackground="#BBDEFB", highlightthickness=1)
++        fish_flow_frame = self.create_premium_card(
++            container,
++            bg="#f5f9fd",
++            border_color="#BBDEFB",
++            shadow=True
++        )
+         fish_flow_frame.pack(fill="x", pady=(0, 20))
+ 
+         # Fish Flow Details Frame (content changes based on enabled state)
+@@ -1896,18 +2019,18 @@ class HotkeyConfigApp:
+         title = tk.Label(
+             title_frame,
+             text="💬 Discord Notifications",
+-            font=("Segoe UI", 15, "bold"),
++            font=("Segoe UI", 16, "bold"),
+             bg="white",
+-            fg="#1976D2"
++            fg="#0d47a1"
+         )
+         title.pack(anchor="w")
+ 
+         desc = tk.Label(
+             title_frame,
+             text="Get notified via Discord webhook when fishing milestones are reached",
+-            font=("Segoe UI", 9),
++            font=("Segoe UI", 10),
+             bg="white",
+-            fg="#757575"
++            fg="#78909c"
+         )
+         desc.pack(anchor="w", pady=(5, 0))
+ 
+@@ -1975,20 +2098,14 @@ class HotkeyConfigApp:
+         )
+         webhook_entry.pack(side="left", fill="x", expand=True, ipady=6)
+ 
+-        test_button = tk.Button(
++        test_button = self.create_premium_button(
+             url_controls_frame,
+             text="Test Webhook",
+-            font=("Segoe UI", 10, "bold"),
+-            bg="#5865F2",
+-            fg="white",
+-            activebackground="#4752C4",
+-            activeforeground="white",
+-            relief="flat",
++            command=self.test_discord_webhook,
++            bg_color="#5865F2",
++            hover_color="#4752C4",
+             padx=25,
+-            pady=8,
+-            cursor="hand2",
+-            borderwidth=0,
+-            command=self.test_discord_webhook
++            pady=8
+         )
+         test_button.pack(side="left", padx=(12, 0))
+ 
+@@ -2318,9 +2435,9 @@ class HotkeyConfigApp:
+         title = tk.Label(
+             title_frame,
+             text="❤️ Support The Creators",
+-            font=("Segoe UI", 16, "bold"),
++            font=("Segoe UI", 18, "bold"),
+             bg="white",
+-            fg="#1976D2"
++            fg="#0d47a1"
+         )
+         title.pack(anchor="w")
+ 
+@@ -2328,15 +2445,20 @@ class HotkeyConfigApp:
+         subtitle = tk.Label(
+             title_frame,
+             text="Enjoying IRUS V7? Show your appreciation and help us continue development!",
+-            font=("Segoe UI", 10),
++            font=("Segoe UI", 11),
+             bg="white",
+-            fg="#757575"
++            fg="#78909c"
+         )
+         subtitle.pack(anchor="w", pady=(8, 0))
+ 
+-        # Discord Section
+-        discord_frame = tk.Frame(container, bg="#f0f4ff", relief="solid", bd=1, highlightbackground="#5865F2", highlightthickness=2)
+-        discord_frame.pack(fill="x", pady=(0, 18))
++        # Discord Section with enhanced card
++        discord_frame = self.create_premium_card(
++            container,
++            bg="#f0f4ff",
++            border_color="#5865F2",
++            shadow=True
++        )
++        discord_frame.pack(fill="x", pady=(0, 20))
+ 
+         discord_inner = tk.Frame(discord_frame, bg="#f0f4ff")
+         discord_inner.pack(padx=25, pady=22)
+@@ -2375,15 +2497,23 @@ class HotkeyConfigApp:
+             text="https://discord.gg/vKVBbyfHTD",
+             font=("Segoe UI", 10, "underline"),
+             bg="#f0f4ff",
+-            fg="#0066cc",
++            fg="#5865F2",
+             cursor="hand2"
+         )
+         discord_link.pack(anchor="w")
+         discord_link.bind("<Button-1>", lambda e: self.open_url("https://discord.gg/vKVBbyfHTD"))
++        # Add hover effect - darken on hover
++        discord_link.bind("<Enter>", lambda _: discord_link.config(fg="#4752C4"))
++        discord_link.bind("<Leave>", lambda _: discord_link.config(fg="#5865F2"))
+ 
+-        # YouTube Section
+-        youtube_frame = tk.Frame(container, bg="#fff5f5", relief="solid", bd=1, highlightbackground="#FF0000", highlightthickness=2)
+-        youtube_frame.pack(fill="x", pady=(0, 18))
++        # YouTube Section with enhanced card
++        youtube_frame = self.create_premium_card(
++            container,
++            bg="#fff5f5",
++            border_color="#FF0000",
++            shadow=True
++        )
++        youtube_frame.pack(fill="x", pady=(0, 20))
+ 
+         youtube_inner = tk.Frame(youtube_frame, bg="#fff5f5")
+         youtube_inner.pack(padx=25, pady=22)
+@@ -2422,15 +2552,23 @@ class HotkeyConfigApp:
+             text="https://www.youtube.com/channel/UCNYFFWcJAgYSZGa4_-Rf-ug",
+             font=("Segoe UI", 10, "underline"),
+             bg="#fff5f5",
+-            fg="#0066cc",
++            fg="#FF0000",
+             cursor="hand2"
+         )
+         youtube_link.pack(anchor="w")
+         youtube_link.bind("<Button-1>", lambda e: self.open_url("https://www.youtube.com/channel/UCNYFFWcJAgYSZGa4_-Rf-ug"))
++        # Add hover effect - darken on hover
++        youtube_link.bind("<Enter>", lambda _: youtube_link.config(fg="#CC0000"))
++        youtube_link.bind("<Leave>", lambda _: youtube_link.config(fg="#FF0000"))
+ 
+-        # PayPal Section
+-        paypal_frame = tk.Frame(container, bg="#f0f8ff", relief="solid", bd=1, highlightbackground="#0070BA", highlightthickness=2)
+-        paypal_frame.pack(fill="x", pady=(0, 18))
++        # PayPal Section with enhanced card
++        paypal_frame = self.create_premium_card(
++            container,
++            bg="#f0f8ff",
++            border_color="#0070BA",
++            shadow=True
++        )
++        paypal_frame.pack(fill="x", pady=(0, 20))
+ 
+         paypal_inner = tk.Frame(paypal_frame, bg="#f0f8ff")
+         paypal_inner.pack(padx=25, pady=22)
+@@ -2469,11 +2607,14 @@ class HotkeyConfigApp:
+             text="https://www.paypal.com/paypalme/JLim862",
+             font=("Segoe UI", 10, "underline"),
+             bg="#f0f8ff",
+-            fg="#0066cc",
++            fg="#0070BA",
+             cursor="hand2"
+         )
+         paypal_link.pack(anchor="w")
+         paypal_link.bind("<Button-1>", lambda e: self.open_url("https://www.paypal.com/paypalme/JLim862"))
++        # Add hover effect - darken on hover
++        paypal_link.bind("<Enter>", lambda _: paypal_link.config(fg="#005A92"))
++        paypal_link.bind("<Leave>", lambda _: paypal_link.config(fg="#0070BA"))
+ 
+         # Thank you message
+         thanks_frame = tk.Frame(container, bg="#E8F5E9", relief="solid", bd=1, highlightbackground="#4CAF50", highlightthickness=1)
+@@ -3233,11 +3374,28 @@ class HotkeyConfigApp:
+         if self.loop_thread and self.loop_thread.is_alive():
+             self.loop_thread.join(timeout=2)
+ 
++        # Cancel all pending animations to prevent errors
++        try:
++            for callback_id in self.pending_animations:
++                try:
++                    self.root.after_cancel(callback_id)
++                except:
++                    pass
++            self.pending_animations.clear()
++        except:
++            pass
++
+         # Save GUI size and position before closing
+         self.save_gui_geometry()
+         self.save_config()
+         keyboard.unhook_all()
+-        self.root.destroy()
++
++        # Destroy the window
++        try:
++            self.root.quit()
++            self.root.destroy()
++        except:
++            pass
+ 
+ 
+ class AreaSelector:

@@ -1,0 +1,13 @@
+{
+    "hotkeys": {
+        "start_stop": "f1",
+        "change_area": "f3",
+        "exit": "f3"
+    },
+    "fish_box": {
+        "x": 820,
+        "y": 992,
+        "width": 921,
+        "height": 39
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m py_compile:*)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(ren:*)",
+      "Bash(ren train.py train_fish.py)",
+      "Bash(move:*)",
+      "Bash(move train.py train_fish.py)",
+      "Bash(python:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

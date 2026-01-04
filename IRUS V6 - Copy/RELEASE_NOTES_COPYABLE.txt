@@ -1,0 +1,84 @@
+🎣 **IRUS V5 - Advanced Fishing Automation**
+
+**✨ Major Features**
+• Universal Rod Support with 12+ rod types and individual color profiles
+• Advanced Automation Suite with Auto Cast, Auto Shake, and Auto Zoom
+• Dual Mode Operation - Click Mode and Navigation Mode for different playstyles
+• Smart Target Tracking with AI-powered detection algorithms
+• Real-time Visual Feedback and live detection overlay
+• Tabbed Interface with organized configuration panels
+• Multi-Monitor Support with DPI scaling compatibility
+• Rod-Specific Tolerances for optimal detection per rod type
+
+**🎣 Supported Rod Types**
+• Default (Universal compatibility)
+• Evil Pitch Fork | Onirifalx | Polaris Serenade
+• Wingripper | Luminescent Oath | Ruinous Oath  
+• Duskwire | Sanguine Spire | Sword of Darkness | Axe of Rhoads | Chrysalis
+
+**🚀 Quick Start Guide**
+1. Download IRUS_V5.exe
+2. Run as Administrator (recommended)
+3. Accept terms of service on first launch
+4. Select your Rod Type from the dropdown menu
+5. Press F4 to start fishing automation
+6. Press F5 to show detection areas overlay
+7. Press F6 for emergency exit
+
+**⚙️ Default Configuration**
+• Rod Type: Default (works with all rods)
+• Shake Mode: Click (mouse-based automation)
+• Auto Cast: Enabled with refresh rod feature
+• Auto Shake: Enabled with smart detection
+• Auto Zoom: Enabled for better accuracy
+• Live Feed: Disabled (enable for visual debugging)
+
+**🎮 Hotkey Controls**
+• F4: Start/Stop fishing automation
+• F5: Toggle detection areas overlay
+• F6: Force exit application
+
+**🤖 Automation Modes**
+
+**Click Mode:**
+• Mouse-based automation with intelligent clicking
+• Circle & Pixel detection for shake events
+• Configurable click counts (single/double click)
+• Smart duplicate prevention
+
+**Navigation Mode:**
+• Keyboard-based automation for hands-free operation
+• Smart Enter spamming with configurable delays
+• Automatic recast management
+• Customizable navigation keys
+
+**📊 Interface Organization**
+• 🎮 Basic Controls: Rod selection, hotkeys, and core settings
+• 🤖 Automation: Advanced automation configuration options
+• 🖥️ Display: Visual options and debugging tools
+
+**🆕 What's New in V5**
+• Universal rod support with individual color profiles
+• Navigation mode for complete keyboard automation
+• Tabbed interface with improved organization
+• Rod-specific tolerance settings for optimal detection
+• Enhanced multi-monitor support with DPI scaling
+• Real-time configuration without restart required
+• Performance improvements with 40% faster detection
+• Expanded automation options and smart features
+
+**📋 System Requirements**
+• Windows 10/11 (64-bit)
+• 4GB RAM minimum, 8GB recommended
+• 1920x1080 minimum resolution
+• No Python or additional software needed
+• Administrator rights recommended for best performance
+
+**🛡️ Build Information**
+• Standalone executable (no installation required)
+• All dependencies embedded
+• Clean build without aggressive protection
+• Compatible with all Windows systems
+• File size: ~61MB
+
+Created by AsphaltCake | Subscribe on YouTube: https://youtube.com/@AsphaltCake

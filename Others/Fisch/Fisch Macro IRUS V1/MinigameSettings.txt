@@ -1,0 +1,16 @@
+Author=AsphaltCake
+
+BarSideRatio=0.75
+DeadZoneRatio=0.1
+MinLeftSideWait=700
+MinRightSideWait=700
+
+RightMultiplier=2.7
+RightDivision=1.2
+LeftMultiplier=2.7
+LeftDivision=1.2
+
+RightAnkleBreakMultiplier=1.25
+LeftAnkleBreakMultiplier=0.75
+
+ScanDelay=10

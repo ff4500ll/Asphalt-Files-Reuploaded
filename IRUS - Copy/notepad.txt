@@ -1,0 +1,3 @@
+I see the issue! The logic is backwards. When it completes the release phase, it's calling mouse_down() which starts holding, but then immediately setting in_move_cycle = False which causes it to replan while still holding. This creates a broken state. The problem is in lines 3727-3732. Let me fix it:
+Read c:\Users\8USB\Desktop\Clutter\Autohotkey\IRUS\p.py (lines 3720-3739)
+Session limit reached ∙ resets 2am

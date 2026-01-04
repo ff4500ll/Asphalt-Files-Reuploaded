@@ -1,0 +1,412 @@
+2025-10-14 09:44:41 | INFO | MainThread | Application startup - debug logging enabled
+2025-10-14 09:44:42 | INFO | MainThread | Config.txt found - Terms of Use previously accepted
+2025-10-14 09:44:42 | INFO | MainThread | Global Hotkeys Initialized and Active.
+2025-10-14 09:44:42 | INFO | MainThread | Color displays initialized successfully
+2025-10-14 09:44:57 | INFO | MainThread | Configuration saved to Config.txt.
+2025-10-14 09:44:57 | INFO | MainThread | Configuration saved to Config.txt.
+2025-10-14 09:44:58 | INFO | MainThread | Configuration saved to Config.txt.
+2025-10-14 09:45:04 | INFO | MainThread | Hotkey 'F4' pressed for action: START/STOP.
+2025-10-14 09:45:04 | INFO | MainThread | Script Start triggered. Initial state: IDLE
+2025-10-14 09:45:04 | INFO | MainThread | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:04 | INFO | MainThread | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:04 | INFO | MainThread | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:04 | INFO | MainThread | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:04 | INFO | MainThread | === MONITOR DEBUG INFO ===
+2025-10-14 09:45:04 | INFO | MainThread | Virtual Desktop: (-1920, 0) 6400x1440
+2025-10-14 09:45:04 | INFO | MainThread | Primary Monitor: 2560x1440
+2025-10-14 09:45:04 | INFO | MainThread | Number of monitors detected: 3
+2025-10-14 09:45:04 | INFO | MainThread | DPI Awareness: Could not determine
+2025-10-14 09:45:04 | INFO | MainThread | GUI Geometry: 474x926+10+241
+2025-10-14 09:45:04 | INFO | MainThread | Shake Geometry Setting: 1589x792+466+284
+2025-10-14 09:45:04 | INFO | MainThread | Fish Geometry Setting: 1034x48+764+1171
+2025-10-14 09:45:04 | INFO | MainThread | Live Feed Position: +760+1033
+2025-10-14 09:45:04 | INFO | MainThread | === END MONITOR DEBUG INFO ===
+2025-10-14 09:45:04 | INFO | MainThread | Monitor configuration refreshed for new automation session
+2025-10-14 09:45:04 | INFO | MainThread | === AUTOMATION START DEBUG ===
+2025-10-14 09:45:04 | INFO | MainThread | Initial state: IDLE
+2025-10-14 09:45:04 | INFO | MainThread | Shake mode: Click
+2025-10-14 09:45:04 | INFO | MainThread | Auto cast enabled: True
+2025-10-14 09:45:04 | INFO | MainThread | Auto shake enabled: True
+2025-10-14 09:45:04 | INFO | MainThread | Navigation has run once: False
+2025-10-14 09:45:04 | INFO | MainThread | === END AUTOMATION START DEBUG ===
+2025-10-14 09:45:04 | INFO | MainThread | Auto Zoom In: Starting zoom sequence (10 up, 1 down)
+2025-10-14 09:45:04 | INFO | MainThread | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:04 | INFO | MainThread | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:04 | INFO | MainThread | Auto Zoom In: Using current mouse position (1535, 1027)
+2025-10-14 09:45:04 | INFO | MainThread | Auto Zoom In: Scrolling at position (1535, 1027)
+2025-10-14 09:45:05 | INFO | MainThread | Auto Zoom In: Physical scroll up 1/10
+2025-10-14 09:45:05 | INFO | MainThread | Auto Zoom In: Physical scroll up 2/10
+2025-10-14 09:45:05 | INFO | MainThread | Auto Zoom In: Physical scroll up 3/10
+2025-10-14 09:45:05 | INFO | MainThread | Auto Zoom In: Physical scroll up 4/10
+2025-10-14 09:45:05 | INFO | MainThread | Auto Zoom In: Physical scroll up 5/10
+2025-10-14 09:45:05 | INFO | MainThread | Auto Zoom In: Physical scroll up 6/10
+2025-10-14 09:45:05 | INFO | MainThread | Auto Zoom In: Physical scroll up 7/10
+2025-10-14 09:45:05 | INFO | MainThread | Auto Zoom In: Physical scroll up 8/10
+2025-10-14 09:45:05 | INFO | MainThread | Auto Zoom In: Physical scroll up 9/10
+2025-10-14 09:45:05 | INFO | MainThread | Auto Zoom In: Physical scroll up 10/10
+2025-10-14 09:45:05 | INFO | MainThread | Auto Zoom In: Physical scroll down 1/1
+2025-10-14 09:45:05 | INFO | MainThread | Auto Zoom In: Zoom sequence completed successfully
+2025-10-14 09:45:05 | INFO | MainThread | Control thread started successfully at 100 FPS.
+2025-10-14 09:45:05 | INFO | Thread-3 (_control_thread_run) | CLICK_MODE DEBUG: Current state=IDLE, using Click mode flow
+2025-10-14 09:45:05 | INFO | Thread-3 (_control_thread_run) | Rod Refresh: Starting sequence with 0.3s delays
+2025-10-14 09:45:05 | INFO | Thread-3 (_control_thread_run) | Rod Refresh: Pressing key '2'
+2025-10-14 09:45:06 | INFO | Thread-3 (_control_thread_run) | Rod Refresh: Pressing key '1'
+2025-10-14 09:45:06 | INFO | Thread-3 (_control_thread_run) | Rod Refresh: Sequence completed
+2025-10-14 09:45:06 | INFO | Thread-3 (_control_thread_run) | CLICK_MODE: HOLD (1.0s) (with rod refresh)
+2025-10-14 09:45:06 | INFO | Thread-3 (_control_thread_run) | CLICK_MODE: RELEASE (2.0s wait) - rod cast time recorded
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: Found STRICT circle at local (330, 462) with radius 74
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: ShakeArea at (466,284) size 1589x792
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Using Circle detection mode
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Found target at local (330,462) -> screen (796,746)
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Virtual desktop bounds: left=-1920, top=0, width=6400, height=1440
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: Teleporting to (796,746) then moving 1px down
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: Teleported to (796, 746)
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: After anti-Roblox movement: (796, 747)
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: Click 2 of 2
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: Instant teleport + double-click complete at (796, 747)
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: Physical mouse movement + click at (796,746) delay=10ms
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: Found STRICT circle at local (330, 464) with radius 74
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: ShakeArea at (466,284) size 1589x792
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Using Circle detection mode
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Found target at local (330,464) -> screen (796,748)
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Virtual desktop bounds: left=-1920, top=0, width=6400, height=1440
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: Same spot detected at (796,748), starting duplicate timer
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: Found STRICT circle at local (330, 462) with radius 74
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: ShakeArea at (466,284) size 1589x792
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Using Circle detection mode
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Found target at local (330,462) -> screen (796,746)
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Virtual desktop bounds: left=-1920, top=0, width=6400, height=1440
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: Skipping duplicate click at (796,746), 941ms remaining until override
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: Found STRICT circle at local (314, 46) with radius 75
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: ShakeArea at (466,284) size 1589x792
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Using Circle detection mode
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Found target at local (314,46) -> screen (780,330)
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Virtual desktop bounds: left=-1920, top=0, width=6400, height=1440
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: Teleporting to (780,330) then moving 1px down
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: Teleported to (780, 330)
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: After anti-Roblox movement: (780, 331)
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: Click 2 of 2
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: Instant teleport + double-click complete at (780, 331)
+2025-10-14 09:45:07 | INFO | Thread-3 (_control_thread_run) | AutoShake: Physical mouse movement + click at (780,330) delay=10ms
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Found STRICT circle at local (214, 136) with radius 65
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: ShakeArea at (466,284) size 1589x792
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Using Circle detection mode
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Found target at local (214,136) -> screen (680,420)
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Virtual desktop bounds: left=-1920, top=0, width=6400, height=1440
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Teleporting to (680,420) then moving 1px down
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Teleported to (680, 420)
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: After anti-Roblox movement: (680, 421)
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Click 2 of 2
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Instant teleport + double-click complete at (680, 421)
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Physical mouse movement + click at (680,420) delay=10ms
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Found STRICT circle at local (214, 136) with radius 74
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: ShakeArea at (466,284) size 1589x792
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Using Circle detection mode
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Found target at local (214,136) -> screen (680,420)
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Virtual desktop bounds: left=-1920, top=0, width=6400, height=1440
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Same spot detected at (680,420), starting duplicate timer
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Found STRICT circle at local (896, 290) with radius 75
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: ShakeArea at (466,284) size 1589x792
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Using Circle detection mode
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Found target at local (896,290) -> screen (1362,574)
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Virtual desktop bounds: left=-1920, top=0, width=6400, height=1440
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Teleporting to (1362,574) then moving 1px down
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Teleported to (1362, 574)
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: After anti-Roblox movement: (1362, 575)
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Click 2 of 2
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Instant teleport + double-click complete at (1362, 575)
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Physical mouse movement + click at (1362,574) delay=10ms
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Found STRICT circle at local (412, 36) with radius 76
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: ShakeArea at (466,284) size 1589x792
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Using Circle detection mode
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Found target at local (412,36) -> screen (878,320)
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake Debug: Virtual desktop bounds: left=-1920, top=0, width=6400, height=1440
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Teleporting to (878,320) then moving 1px down
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Teleported to (878, 320)
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: After anti-Roblox movement: (878, 321)
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Click 2 of 2
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Instant teleport + double-click complete at (878, 321)
+2025-10-14 09:45:08 | INFO | Thread-3 (_control_thread_run) | AutoShake: Physical mouse movement + click at (878,320) delay=10ms
+2025-10-14 09:45:08 | INFO | MainThread | Hotkey 'F4' pressed for action: START/STOP.
+2025-10-14 09:45:08 | INFO | MainThread | Script Stop triggered.
+2025-10-14 09:45:09 | INFO | MainThread | Automation stopped.
+2025-10-14 09:45:09 | INFO | MainThread | Configuration saved to Config.txt.
+2025-10-14 09:45:11 | INFO | MainThread | Configuration saved to Config.txt.
+2025-10-14 09:45:11 | INFO | MainThread | Configuration saved to Config.txt.
+2025-10-14 09:45:17 | INFO | MainThread | Hotkey 'F4' pressed for action: START/STOP.
+2025-10-14 09:45:17 | INFO | MainThread | Script Start triggered. Initial state: IDLE
+2025-10-14 09:45:17 | INFO | MainThread | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:17 | INFO | MainThread | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:17 | INFO | MainThread | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:17 | INFO | MainThread | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:17 | INFO | MainThread | === MONITOR DEBUG INFO ===
+2025-10-14 09:45:17 | INFO | MainThread | Virtual Desktop: (-1920, 0) 6400x1440
+2025-10-14 09:45:17 | INFO | MainThread | Primary Monitor: 2560x1440
+2025-10-14 09:45:17 | INFO | MainThread | Number of monitors detected: 3
+2025-10-14 09:45:17 | INFO | MainThread | DPI Awareness: Could not determine
+2025-10-14 09:45:17 | INFO | MainThread | GUI Geometry: 474x926+10+241
+2025-10-14 09:45:17 | INFO | MainThread | Shake Geometry Setting: 1589x792+466+284
+2025-10-14 09:45:17 | INFO | MainThread | Fish Geometry Setting: 1034x48+764+1171
+2025-10-14 09:45:17 | INFO | MainThread | Live Feed Position: +760+1033
+2025-10-14 09:45:17 | INFO | MainThread | === END MONITOR DEBUG INFO ===
+2025-10-14 09:45:17 | INFO | MainThread | Monitor configuration refreshed for new automation session
+2025-10-14 09:45:17 | INFO | MainThread | === AUTOMATION START DEBUG ===
+2025-10-14 09:45:17 | INFO | MainThread | Initial state: IDLE
+2025-10-14 09:45:17 | INFO | MainThread | Shake mode: Click
+2025-10-14 09:45:17 | INFO | MainThread | Auto cast enabled: True
+2025-10-14 09:45:17 | INFO | MainThread | Auto shake enabled: True
+2025-10-14 09:45:17 | INFO | MainThread | Navigation has run once: False
+2025-10-14 09:45:17 | INFO | MainThread | === END AUTOMATION START DEBUG ===
+2025-10-14 09:45:17 | INFO | MainThread | Auto Zoom In: Starting zoom sequence (10 up, 1 down)
+2025-10-14 09:45:17 | INFO | MainThread | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:17 | INFO | MainThread | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:17 | INFO | MainThread | Auto Zoom In: Using current mouse position (1398, 593)
+2025-10-14 09:45:17 | INFO | MainThread | Auto Zoom In: Scrolling at position (1398, 593)
+2025-10-14 09:45:18 | INFO | MainThread | Auto Zoom In: Physical scroll up 1/10
+2025-10-14 09:45:18 | INFO | MainThread | Auto Zoom In: Physical scroll up 2/10
+2025-10-14 09:45:18 | INFO | MainThread | Auto Zoom In: Physical scroll up 3/10
+2025-10-14 09:45:18 | INFO | MainThread | Auto Zoom In: Physical scroll up 4/10
+2025-10-14 09:45:18 | INFO | MainThread | Auto Zoom In: Physical scroll up 5/10
+2025-10-14 09:45:18 | INFO | MainThread | Auto Zoom In: Physical scroll up 6/10
+2025-10-14 09:45:18 | INFO | MainThread | Auto Zoom In: Physical scroll up 7/10
+2025-10-14 09:45:18 | INFO | MainThread | Auto Zoom In: Physical scroll up 8/10
+2025-10-14 09:45:18 | INFO | MainThread | Auto Zoom In: Physical scroll up 9/10
+2025-10-14 09:45:18 | INFO | MainThread | Auto Zoom In: Physical scroll up 10/10
+2025-10-14 09:45:18 | INFO | MainThread | Auto Zoom In: Physical scroll down 1/1
+2025-10-14 09:45:18 | INFO | MainThread | Auto Zoom In: Zoom sequence completed successfully
+2025-10-14 09:45:18 | INFO | MainThread | Control thread started successfully at 100 FPS.
+2025-10-14 09:45:18 | INFO | Thread-4 (_control_thread_run) | CLICK_MODE DEBUG: Current state=IDLE, using Click mode flow
+2025-10-14 09:45:18 | INFO | Thread-4 (_control_thread_run) | Rod Refresh: Starting sequence with 0.3s delays
+2025-10-14 09:45:18 | INFO | Thread-4 (_control_thread_run) | Rod Refresh: Pressing key '2'
+2025-10-14 09:45:19 | INFO | Thread-4 (_control_thread_run) | Rod Refresh: Pressing key '1'
+2025-10-14 09:45:19 | INFO | Thread-4 (_control_thread_run) | Rod Refresh: Sequence completed
+2025-10-14 09:45:19 | INFO | Thread-4 (_control_thread_run) | CLICK_MODE: HOLD (0.1s) (with rod refresh)
+2025-10-14 09:45:19 | INFO | Thread-4 (_control_thread_run) | CLICK_MODE: RELEASE (2.0s wait) - rod cast time recorded
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Found STRICT circle at local (346, 410) with radius 75
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: ShakeArea at (466,284) size 1589x792
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Using Circle detection mode
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Found target at local (346,410) -> screen (812,694)
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Virtual desktop bounds: left=-1920, top=0, width=6400, height=1440
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Teleporting to (812,694) then moving 1px down
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Teleported to (812, 694)
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: After anti-Roblox movement: (812, 695)
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Click 2 of 2
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Instant teleport + double-click complete at (812, 695)
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Physical mouse movement + click at (812,694) delay=10ms
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Found STRICT circle at local (380, 128) with radius 74
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: ShakeArea at (466,284) size 1589x792
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Using Circle detection mode
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Found target at local (380,128) -> screen (846,412)
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Virtual desktop bounds: left=-1920, top=0, width=6400, height=1440
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Teleporting to (846,412) then moving 1px down
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Teleported to (846, 412)
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: After anti-Roblox movement: (846, 413)
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Click 2 of 2
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Instant teleport + double-click complete at (846, 413)
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Physical mouse movement + click at (846,412) delay=10ms
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Found STRICT circle at local (314, 74) with radius 74
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: ShakeArea at (466,284) size 1589x792
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Using Circle detection mode
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Found target at local (314,74) -> screen (780,358)
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Virtual desktop bounds: left=-1920, top=0, width=6400, height=1440
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Teleporting to (780,358) then moving 1px down
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Teleported to (780, 358)
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: After anti-Roblox movement: (780, 359)
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Click 2 of 2
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Instant teleport + double-click complete at (780, 359)
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Physical mouse movement + click at (780,358) delay=10ms
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Found STRICT circle at local (346, 82) with radius 75
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: ShakeArea at (466,284) size 1589x792
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Using Circle detection mode
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Found target at local (346,82) -> screen (812,366)
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Virtual desktop bounds: left=-1920, top=0, width=6400, height=1440
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Teleporting to (812,366) then moving 1px down
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: Teleported to (812, 366)
+2025-10-14 09:45:20 | INFO | Thread-4 (_control_thread_run) | AutoShake: After anti-Roblox movement: (812, 367)
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: Click 2 of 2
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: Instant teleport + double-click complete at (812, 367)
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: Physical mouse movement + click at (812,366) delay=10ms
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: Found STRICT circle at local (696, 372) with radius 65
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: ShakeArea at (466,284) size 1589x792
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Using Circle detection mode
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Found target at local (696,372) -> screen (1162,656)
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Virtual desktop bounds: left=-1920, top=0, width=6400, height=1440
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: Teleporting to (1162,656) then moving 1px down
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: Teleported to (1162, 656)
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: After anti-Roblox movement: (1162, 657)
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: Click 2 of 2
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: Instant teleport + double-click complete at (1162, 657)
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: Physical mouse movement + click at (1162,656) delay=10ms
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: Found STRICT circle at local (544, 218) with radius 74
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: ShakeArea at (466,284) size 1589x792
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Using Circle detection mode
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Found target at local (544,218) -> screen (1010,502)
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake Debug: Virtual desktop bounds: left=-1920, top=0, width=6400, height=1440
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: Teleporting to (1010,502) then moving 1px down
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: Teleported to (1010, 502)
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: After anti-Roblox movement: (1010, 503)
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: Click 2 of 2
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: Instant teleport + double-click complete at (1010, 503)
+2025-10-14 09:45:21 | INFO | Thread-4 (_control_thread_run) | AutoShake: Physical mouse movement + click at (1010,502) delay=10ms
+2025-10-14 09:45:22 | INFO | Thread-4 (_control_thread_run) | Rod Refresh: Starting sequence with 0.3s delays
+2025-10-14 09:45:22 | INFO | Thread-4 (_control_thread_run) | Rod Refresh: Pressing key '2'
+2025-10-14 09:45:22 | INFO | Thread-4 (_control_thread_run) | Rod Refresh: Pressing key '1'
+2025-10-14 09:45:23 | INFO | Thread-4 (_control_thread_run) | Rod Refresh: Sequence completed
+2025-10-14 09:45:23 | INFO | Thread-4 (_control_thread_run) | CLICK_MODE: HOLD (0.1s) (with rod refresh)
+2025-10-14 09:45:23 | INFO | Thread-4 (_control_thread_run) | IDLE -> FISHING. Target line and box color found.
+2025-10-14 09:45:23 | INFO | Thread-4 (_control_thread_run) | Initial Box Length calculated: 567.0px.
+2025-10-14 09:45:23 | INFO | Thread-4 (_control_thread_run) | Initial steadying system activated - raw pixel tracking | Target: None | Left: None | Right: None
+2025-10-14 09:45:23 | INFO | Thread-4 (_control_thread_run) | STEADYING: Baseline distance (target to left edge): 283.5px
+2025-10-14 09:45:24 | INFO | Thread-4 (_control_thread_run) | MOVEMENT DETECTED: Distance changed 283.5px -> 266.5px (delta: 17.0px)
+2025-10-14 09:45:24 | INFO | Thread-4 (_control_thread_run) | STEADYING -> PD CONTROL: Distance change detected, switching immediately!
+2025-10-14 09:45:24 | INFO | Thread-4 (_control_thread_run) | Boundary Control: margin=242.0px (bar_length=484.0 x factor=0.50), width=1034
+2025-10-14 09:45:24 | INFO | Thread-4 (_control_thread_run) | Adaptive learning active: error=24.52, control=90.00, bar_size=484.0px
+2025-10-14 09:45:24 | INFO | MainThread | Hotkey 'F4' pressed for action: START/STOP.
+2025-10-14 09:45:24 | INFO | MainThread | Script Stop triggered.
+2025-10-14 09:45:24 | INFO | MainThread | Automation stopped.
+2025-10-14 09:45:24 | INFO | Thread-4 (_control_thread_run) | CLICK_MODE DEBUG: Current state=IDLE, using Click mode flow
+2025-10-14 09:45:24 | INFO | Thread-4 (_control_thread_run) | CLICK_MODE: RELEASE (2.0s wait) - rod cast time recorded
+2025-10-14 09:45:27 | INFO | MainThread | Configuration saved to Config.txt.
+2025-10-14 09:45:27 | INFO | MainThread | Configuration saved to Config.txt.
+2025-10-14 09:45:30 | INFO | MainThread | Hotkey 'F4' pressed for action: START/STOP.
+2025-10-14 09:45:30 | INFO | MainThread | Script Start triggered. Initial state: IDLE
+2025-10-14 09:45:30 | INFO | MainThread | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:30 | INFO | MainThread | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:30 | INFO | MainThread | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:30 | INFO | MainThread | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:30 | INFO | MainThread | === MONITOR DEBUG INFO ===
+2025-10-14 09:45:30 | INFO | MainThread | Virtual Desktop: (-1920, 0) 6400x1440
+2025-10-14 09:45:30 | INFO | MainThread | Primary Monitor: 2560x1440
+2025-10-14 09:45:30 | INFO | MainThread | Number of monitors detected: 3
+2025-10-14 09:45:30 | INFO | MainThread | DPI Awareness: Could not determine
+2025-10-14 09:45:30 | INFO | MainThread | GUI Geometry: 474x926+10+241
+2025-10-14 09:45:30 | INFO | MainThread | Shake Geometry Setting: 1589x792+466+284
+2025-10-14 09:45:30 | INFO | MainThread | Fish Geometry Setting: 1034x48+764+1171
+2025-10-14 09:45:30 | INFO | MainThread | Live Feed Position: +760+1033
+2025-10-14 09:45:30 | INFO | MainThread | === END MONITOR DEBUG INFO ===
+2025-10-14 09:45:30 | INFO | MainThread | Monitor configuration refreshed for new automation session
+2025-10-14 09:45:30 | INFO | MainThread | === AUTOMATION START DEBUG ===
+2025-10-14 09:45:30 | INFO | MainThread | Initial state: IDLE
+2025-10-14 09:45:30 | INFO | MainThread | Shake mode: Click
+2025-10-14 09:45:30 | INFO | MainThread | Auto cast enabled: True
+2025-10-14 09:45:30 | INFO | MainThread | Auto shake enabled: True
+2025-10-14 09:45:30 | INFO | MainThread | Navigation has run once: False
+2025-10-14 09:45:30 | INFO | MainThread | === END AUTOMATION START DEBUG ===
+2025-10-14 09:45:30 | INFO | MainThread | Auto Zoom In: Starting zoom sequence (10 up, 1 down)
+2025-10-14 09:45:30 | INFO | MainThread | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:30 | INFO | MainThread | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:30 | INFO | MainThread | Auto Zoom In: Using current mouse position (1111, 564)
+2025-10-14 09:45:30 | INFO | MainThread | Auto Zoom In: Scrolling at position (1111, 564)
+2025-10-14 09:45:30 | INFO | MainThread | Auto Zoom In: Physical scroll up 1/10
+2025-10-14 09:45:30 | INFO | MainThread | Auto Zoom In: Physical scroll up 2/10
+2025-10-14 09:45:30 | INFO | MainThread | Auto Zoom In: Physical scroll up 3/10
+2025-10-14 09:45:31 | INFO | MainThread | Auto Zoom In: Physical scroll up 4/10
+2025-10-14 09:45:31 | INFO | MainThread | Auto Zoom In: Physical scroll up 5/10
+2025-10-14 09:45:31 | INFO | MainThread | Auto Zoom In: Physical scroll up 6/10
+2025-10-14 09:45:31 | INFO | MainThread | Auto Zoom In: Physical scroll up 7/10
+2025-10-14 09:45:31 | INFO | MainThread | Auto Zoom In: Physical scroll up 8/10
+2025-10-14 09:45:31 | INFO | MainThread | Auto Zoom In: Physical scroll up 9/10
+2025-10-14 09:45:31 | INFO | MainThread | Auto Zoom In: Physical scroll up 10/10
+2025-10-14 09:45:31 | INFO | MainThread | Auto Zoom In: Physical scroll down 1/1
+2025-10-14 09:45:31 | INFO | MainThread | Auto Zoom In: Zoom sequence completed successfully
+2025-10-14 09:45:31 | INFO | MainThread | Control thread started successfully at 100 FPS.
+2025-10-14 09:45:31 | INFO | Thread-5 (_control_thread_run) | CLICK_MODE DEBUG: Current state=IDLE, using Click mode flow
+2025-10-14 09:45:31 | INFO | Thread-5 (_control_thread_run) | Rod Refresh: Starting sequence with 0.3s delays
+2025-10-14 09:45:31 | INFO | Thread-5 (_control_thread_run) | Rod Refresh: Pressing key '2'
+2025-10-14 09:45:31 | INFO | Thread-5 (_control_thread_run) | Rod Refresh: Pressing key '1'
+2025-10-14 09:45:32 | INFO | Thread-5 (_control_thread_run) | Rod Refresh: Sequence completed
+2025-10-14 09:45:32 | INFO | Thread-5 (_control_thread_run) | CLICK_MODE: HOLD (5.0s) (with rod refresh)
+2025-10-14 09:45:36 | INFO | Thread-5 (_control_thread_run) | CLICK_MODE DEBUG: Current state=IDLE, using Click mode flow
+2025-10-14 09:45:36 | INFO | Thread-5 (_control_thread_run) | CLICK_MODE: RELEASE (2.0s wait) - rod cast time recorded
+2025-10-14 09:45:37 | INFO | MainThread | Hotkey 'F4' pressed for action: START/STOP.
+2025-10-14 09:45:37 | INFO | MainThread | Script Stop triggered.
+2025-10-14 09:45:37 | INFO | MainThread | Automation stopped.
+2025-10-14 09:45:44 | INFO | MainThread | Configuration saved to Config.txt.
+2025-10-14 09:45:46 | INFO | MainThread | Configuration saved to Config.txt.
+2025-10-14 09:45:46 | INFO | MainThread | Configuration saved to Config.txt.
+2025-10-14 09:45:47 | INFO | MainThread | Hotkey 'F4' pressed for action: START/STOP.
+2025-10-14 09:45:47 | INFO | MainThread | Script Start triggered. Initial state: IDLE
+2025-10-14 09:45:47 | INFO | MainThread | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:47 | INFO | MainThread | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:47 | INFO | MainThread | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:47 | INFO | MainThread | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:47 | INFO | MainThread | === MONITOR DEBUG INFO ===
+2025-10-14 09:45:47 | INFO | MainThread | Virtual Desktop: (-1920, 0) 6400x1440
+2025-10-14 09:45:47 | INFO | MainThread | Primary Monitor: 2560x1440
+2025-10-14 09:45:47 | INFO | MainThread | Number of monitors detected: 3
+2025-10-14 09:45:47 | INFO | MainThread | DPI Awareness: Could not determine
+2025-10-14 09:45:47 | INFO | MainThread | GUI Geometry: 474x926+10+241
+2025-10-14 09:45:47 | INFO | MainThread | Shake Geometry Setting: 1589x792+466+284
+2025-10-14 09:45:47 | INFO | MainThread | Fish Geometry Setting: 1034x48+764+1171
+2025-10-14 09:45:47 | INFO | MainThread | Live Feed Position: +760+1033
+2025-10-14 09:45:47 | INFO | MainThread | === END MONITOR DEBUG INFO ===
+2025-10-14 09:45:47 | INFO | MainThread | Monitor configuration refreshed for new automation session
+2025-10-14 09:45:47 | INFO | MainThread | === AUTOMATION START DEBUG ===
+2025-10-14 09:45:47 | INFO | MainThread | Initial state: IDLE
+2025-10-14 09:45:47 | INFO | MainThread | Shake mode: Click
+2025-10-14 09:45:47 | INFO | MainThread | Auto cast enabled: True
+2025-10-14 09:45:47 | INFO | MainThread | Auto shake enabled: True
+2025-10-14 09:45:47 | INFO | MainThread | Navigation has run once: False
+2025-10-14 09:45:47 | INFO | MainThread | === END AUTOMATION START DEBUG ===
+2025-10-14 09:45:47 | INFO | MainThread | Auto Zoom In: Starting zoom sequence (10 up, 1 down)
+2025-10-14 09:45:47 | INFO | MainThread | Monitor Info - Virtual: -1920,0 6400x1440
+2025-10-14 09:45:47 | INFO | MainThread | Monitor Info - Primary: 2560x1440
+2025-10-14 09:45:47 | INFO | MainThread | Auto Zoom In: Using current mouse position (939, 632)
+2025-10-14 09:45:47 | INFO | MainThread | Auto Zoom In: Scrolling at position (939, 632)
+2025-10-14 09:45:47 | INFO | MainThread | Auto Zoom In: Physical scroll up 1/10
+2025-10-14 09:45:47 | INFO | MainThread | Auto Zoom In: Physical scroll up 2/10
+2025-10-14 09:45:47 | INFO | MainThread | Auto Zoom In: Physical scroll up 3/10
+2025-10-14 09:45:47 | INFO | MainThread | Auto Zoom In: Physical scroll up 4/10
+2025-10-14 09:45:47 | INFO | MainThread | Auto Zoom In: Physical scroll up 5/10
+2025-10-14 09:45:47 | INFO | MainThread | Auto Zoom In: Physical scroll up 6/10
+2025-10-14 09:45:47 | INFO | MainThread | Auto Zoom In: Physical scroll up 7/10
+2025-10-14 09:45:47 | INFO | MainThread | Auto Zoom In: Physical scroll up 8/10
+2025-10-14 09:45:47 | INFO | MainThread | Auto Zoom In: Physical scroll up 9/10
+2025-10-14 09:45:47 | INFO | MainThread | Auto Zoom In: Physical scroll up 10/10
+2025-10-14 09:45:48 | INFO | MainThread | Auto Zoom In: Physical scroll down 1/1
+2025-10-14 09:45:48 | INFO | MainThread | Auto Zoom In: Zoom sequence completed successfully
+2025-10-14 09:45:48 | INFO | MainThread | Control thread started successfully at 100 FPS.
+2025-10-14 09:45:48 | INFO | Thread-6 (_control_thread_run) | CLICK_MODE DEBUG: Current state=IDLE, using Click mode flow
+2025-10-14 09:45:48 | INFO | Thread-6 (_control_thread_run) | Rod Refresh: Starting sequence with 0.5s delays
+2025-10-14 09:45:48 | INFO | Thread-6 (_control_thread_run) | Rod Refresh: Pressing key '2'
+2025-10-14 09:45:48 | INFO | Thread-6 (_control_thread_run) | Rod Refresh: Pressing key '1'
+2025-10-14 09:45:49 | INFO | Thread-6 (_control_thread_run) | Rod Refresh: Sequence completed
+2025-10-14 09:45:49 | INFO | Thread-6 (_control_thread_run) | CLICK_MODE: HOLD (5.0s) (with rod refresh)
+2025-10-14 09:45:50 | INFO | MainThread | Hotkey 'F4' pressed for action: START/STOP.
+2025-10-14 09:45:50 | INFO | MainThread | Script Stop triggered.
+2025-10-14 09:45:51 | INFO | MainThread | Mouse click RELEASED upon script stop.
+2025-10-14 09:45:51 | INFO | MainThread | Automation stopped.
+2025-10-14 09:45:52 | INFO | MainThread | Configuration saved to Config.txt.
+2025-10-14 09:45:52 | INFO | MainThread | Configuration saved to Config.txt.
+2025-10-14 09:45:53 | INFO | MainThread | Configuration saved to Config.txt.
+2025-10-14 09:46:14 | INFO | MainThread | Configuration saved to Config.txt.
+2025-10-14 09:46:15 | INFO | MainThread | Live Feed toggle: Closing feedback window.
+2025-10-14 09:46:15 | INFO | MainThread | Configuration saved to Config.txt.

@@ -1,0 +1,12 @@
+# Core requirements (required)
+numpy
+opencv-python
+keyboard
+mouse
+pillow
+scikit-learn
+matplotlib
+pandas
+
+# Optional for advanced neural networks
+# tensorflow

@@ -1,0 +1,11 @@
+ScanDelay=100
+TriggerSideBarRatio=0.6
+ReleaseSideBarRatio=0.9
+
+LeftStrength=2.7
+LeftDivision=1
+LeftStabilizerLoops=10
+
+RightStrength=2.7
+RightDivision=1.1
+RightStabilizerLoops=0

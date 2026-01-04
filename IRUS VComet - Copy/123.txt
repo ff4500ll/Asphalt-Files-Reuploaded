@@ -1,0 +1,79 @@
+these lines span from the top of the image to the bottom of the image
+
+1.png (image in 2560x1440)
+there are NO lines (must meet this output)
+
+2.png (image in 2560x1440)
+there are FOUR lines (must meet this output at these coordinates)
+left target line: 509
+right target line: 520
+left bar line: 412
+right bar line: 617
+
+3.png (image in 2560x1440)
+there are FOUR lines (must meet this output at these coordinates)
+left target line: 682
+right target line: 696
+left bar line: 765
+right bar line: 974
+
+4.png (image in 2560x1440)
+there are only THREE lines (must meet this output at these coordinates)
+left target line: 768
+right target line: 781
+left bar line: 485
+
+5.png (image in 2560x1440)
+there are only THREE lines (must meet this output at these coordinates)
+left target line: 844
+right target line: 858
+right bar line: 545
+
+6.png: (image in 1920x1080)
+there are FOUR lines (must meet this output at these coordinates)
+left target line: 509
+right target line: 520
+left bar line: 463
+right bar line: 566
+
+7.png (image in 1920x1080)
+there are FOUR lines (must meet this output at these coordinates)
+left target line: 379
+right target line: 388
+left bar line: 196
+right bar line: 570
+
+8.png (image in 1920x1080)
+there are only THREE lines (must meet this output at these coordinates)
+left target line: 282
+right target line: 291
+right bar line: 358
+
+9.png (image in 1920x1080)
+there are FOUR lines (must meet this output at these coordinates)
+left target line: 322
+right target line: 334
+left bar line: 411
+right bar line: 565
+
+10.png (image in 2560x1440)
+there are FOUR lines (must meet this output at these coordinates)
+left target line: 509
+right target line: 519
+left bar line: 120
+right bar line: 222
+
+
+max level: #ffdcac
+money: #fffde4
+bottom left green: #fffde4 (x:0-500, y:1200-1440)
+
+make it do this,
+
+1) check for target line and assign
+2) check if in edge mode or pd mode
+3) if in edge mode then just update target line, make the line closest to middle that edge, then the other edge is the extreme end on the side the target line is to
+4) if in pd mode then check for bar left and bar right and update to nearest line, 
+
+height: 395
+release: 15

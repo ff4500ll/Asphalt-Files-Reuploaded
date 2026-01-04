@@ -1,0 +1,6 @@
+advanced > everything from control settings
+move to automation > Control Settings (like under shake configuration)
+
+advanced > detection settings > min contour area and target idle threshold
+check if these are even being used, cause theyre kinda from long ago, if they are then move it to
+control settings, else just delete them
