@@ -1,0 +1,30 @@
+{
+    "start_box": {
+        "x1": 1230,
+        "y1": 817,
+        "x2": 1331,
+        "y2": 915
+    },
+    "corner_box": {
+        "x1": 1169,
+        "y1": 823,
+        "x2": 1394,
+        "y2": 1047
+    },
+    "hotkeys": {
+        "start_stop": "f1",
+        "resize_area": "f7",
+        "exit": "f8"
+    },
+    "selected_uma": "Haru Urara",
+    "uma_presets": {
+        "Haru Urara": 215,
+        "Air Groove": 260,
+        "Gold Ship": 260,
+        "Daiwa Scarlet": 260,
+        "Oguri Cap": 260,
+        "Rice Shower": 260,
+        "Tamamo Cross": 260,
+        "Silence Suzuka": 315
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "start_box": {
+        "x1": 1230,
+        "y1": 817,
+        "x2": 1331,
+        "y2": 915
+    },
+    "corner_box": {
+        "x1": 1169,
+        "y1": 823,
+        "x2": 1394,
+        "y2": 1047
+    },
+    "hotkeys": {
+        "start_stop": "Key.f1",
+        "change_area": "Key.f7",
+        "exit": "Key.f8"
+    },
+    "mode_delays": {
+        "z": null,
+        "x": 0.215,
+        "c": 0.0,
+        "v": 0.1,
+        "n": 0.4
+    }
+}

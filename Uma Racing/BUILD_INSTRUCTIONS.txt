@@ -1,0 +1,32 @@
+# Build Instructions for UmaRacing.exe
+
+## Prerequisites
+Install PyInstaller if you haven't already:
+```
+pip install pyinstaller
+```
+
+## Build Commands
+
+### For p.py (original version):
+```
+pyinstaller p.spec
+```
+Output: `dist\UmaRacing.exe`
+
+### For z.py (new version with queue system):
+```
+pyinstaller z.spec
+```
+Output: `dist\UmaRacingZ.exe`
+
+## Notes
+- The PNG files (E.png, F.png, Q.png, R.png) are bundled inside the .exe
+- Settings files are saved in the same directory as the .exe:
+  - p.py uses `p_settings.json`
+  - z.py uses `UmaRacingSettings.json`
+- All paths are automatically handled for both .py and .exe execution
+- Console window is hidden (`console=False` in spec files)
+
+## Testing
+After building, copy the .exe to a new folder and run it to verify everything works.
