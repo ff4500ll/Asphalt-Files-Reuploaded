@@ -1,0 +1,32 @@
+{
+  "terms_accepted": true,
+  "friend_box": {
+    "x1": 21,
+    "y1": 996,
+    "x2": 53,
+    "y2": 1036
+  },
+  "fish_box": {
+    "x1": 429,
+    "y1": 912,
+    "x2": 1009,
+    "y2": 942
+  },
+  "cast_settings": {
+    "delay_before_click": 0.0,
+    "delay_hold_duration": 0.5,
+    "delay_after_release": 0.5,
+    "anti_nuke": false,
+    "anti_nuke_delay_before": 0.0,
+    "anti_nuke_bag_slot": 2,
+    "anti_nuke_delay_after_bag": 0.5,
+    "anti_nuke_rod_slot": 1,
+    "anti_nuke_delay_after_rod": 0.5,
+    "after_fish_delay": 1.0
+  },
+  "hotkeys": {
+    "start_stop": "f3",
+    "change_area": "f1",
+    "exit": "f4"
+  }
+}
